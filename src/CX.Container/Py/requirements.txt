@@ -1,0 +1,6 @@
+python-docx==1.1.2
+pdfplumber==0.11.0
+tabulate==0.9.0
+docx2pdf==0.1.8
+pdf2image==1.17.0
+markitdown

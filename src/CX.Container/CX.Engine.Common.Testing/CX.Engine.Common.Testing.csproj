@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <UserSecretsId>82a0a384-5119-466c-9f64-dda09c20fbe6</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IdentityModel" Version="7.0.0" />
+      <PackageReference Include="xunit" Version="2.4.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CX.Engine.Common\CX.Engine.Common.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+parameters:
+  Pool: 'Azure Pipelines'
+  
+jobs:
+- job: SemVerCalculation
+  pool: ${{ parameters.Pool }}
+  steps: 
+    - checkout: self
+      displayName: Checkout
+      fetchDepth: '0'
+      persistCredentials: true
+
+    - task: gitversion/setup@1
+      inputs:
+        versionSpec: '5.x'
+
+    - task: gitversion/execute@1
+      inputs:
+        useConfigFile: true
+        configFilePath: GitVersion.yml
+        targetPath: '$(Build.SourcesDirectory)'
+        
+    - script: echo "##vso[task.setvariable variable=Version;isOutput=true]$(GitVersion.SemVer)"
+      displayName: Set Version Variable
+      name: outputVars
+
+    - script: |
+        echo "Version: $(GitVersion.SemVer)"
+      displayName: Current Version
+    

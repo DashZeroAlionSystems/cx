@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Discord.Net" Version="3.17.2" />
+        <PackageReference Include="IdentityModel" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CX.Engine.Archives\CX.Engine.Archives.csproj" />
+      <ProjectReference Include="..\CX.Engine.Assistants\CX.Engine.Assistants.csproj" />
+      <ProjectReference Include="..\CX.Engine.ChatAgents\CX.Engine.ChatAgents.csproj" />
+      <ProjectReference Include="..\CX.Engine.Common\CX.Engine.Common.csproj" />
+      <ProjectReference Include="..\CX.Engine.DocExtractors\CX.Engine.DocExtractors.csproj" />
+      <ProjectReference Include="..\CX.Engine.FileServices\CX.Engine.FileServices.csproj" />
+      <ProjectReference Include="..\CX.Engine.Importers\CX.Engine.Importers.csproj" />
+      <ProjectReference Include="..\CX.Engine.QandA\CX.Engine.QandA.csproj" />
+      <ProjectReference Include="..\CX.Engine.TextProcessors\CX.Engine.TextProcessors.csproj" />
+    </ItemGroup>
+</Project>

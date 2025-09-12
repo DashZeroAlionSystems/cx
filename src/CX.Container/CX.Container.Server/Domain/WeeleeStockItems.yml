@@ -1,0 +1,43 @@
+﻿Entities:
+  - Name: WeeleeStockItem
+    Features:
+      - Type: GetList
+      - Type: GetRecord
+      - Type: AddRecord
+      - Type: UpdateRecord
+      - Type: DeleteRecord
+    Properties:
+      - Name: Year
+        Type: string
+      - Name: Variant
+        Type: string
+      - Name: Transmission
+        Type: string
+      - Name: StockNo
+        Type: string
+      - Name: Seats
+        Type: int
+      - Name: Price
+        Type: double
+      - Name: Model
+        Type: string
+      - Name: MmCode
+        Type: string
+      - Name: Mileage
+        Type: int
+      - Name: Make
+        Type: string
+      - Name: FuelType
+        Type: string
+      - Name: Doors
+        Type: string
+      - Name: Description
+        Type: string
+      - Name: DateUpdated
+        Type: DateOnly?
+      - Name: CubicCapacity
+        Type: string
+      - Name: Colour
+        Type: string
+      - Name: BodyType
+        Type: string

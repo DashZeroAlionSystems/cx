@@ -1,0 +1,12 @@
+# Ignore sensitive app settings (both paths)
+src/CX.Container/CX.Container.Server/appsettings.json
+src/CX.Container/CX.Container.Server/appsettings.Development.json
+src/CX.Container/CX.Container.Server/config/appsettings.json
+CX.Container.Server/appsettings.json
+CX.Container.Server/appsettings.Development.json
+CX.Container.Server/config/appsettings.json
+# Allow example templates
+!src/CX.Container/CX.Container.Server/appsettings*.example.json
+!src/CX.Container/CX.Container.Server/config/appsettings*.example.json
+!CX.Container.Server/appsettings*.example.json
+!CX.Container.Server/config/appsettings*.example.json

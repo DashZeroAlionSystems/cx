@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workflow Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar" role="toolbar" aria-label="Workflow Builder Toolbar">
+    <div class="left">
+      <button id="btnImport" aria-label="Import workflow from JSON file">Import JSON</button>
+      <button id="btnExport" aria-label="Export workflow to JSON file">Export JSON</button>
+      <button id="btnImportL1K" aria-label="Import workflow from L1K format">Import L1K</button>
+      <button id="btnExportL1K" aria-label="Export workflow to L1K format">Export L1K</button>
+      <button id="btnGenJS" aria-label="Generate JavaScript code">Generate JS</button>
+      <button id="btnGenCS" aria-label="Generate C# code">Generate C#</button>
+      <button id="btnValidate" aria-label="Validate workflow for issues">Validate</button>
+      <span id="issuesBadge" style="margin-left:8px;color:#ef4444;display:none" role="status" aria-live="polite">0 issues</span>
+      <input type="file" id="fileInput" accept="application/json,.l1k,.txt" style="display:none" aria-label="Select file to import" />
+      <span class="hint">Based on 8n8 Workflows JSON · L1K DSL</span>
+      <label style="margin-left:12px">Examples:
+        <select id="examplesSelect" aria-label="Select example workflow to load">
+          <option value="">-- choose --</option>
+          <option value="linear">Linear Sequence</option>
+          <option value="decision">Decision Branch</option>
+          <option value="parallel">Parallel Fan-out/In</option>
+          <option value="retry">Loop / Retry</option>
+          <option value="timer">Timer / Wait</option>
+          <option value="api">API Call Task</option>
+          <option value="error">Error Handling</option>
+          <option value="youtube_transcribe_summarize">YouTube → Speech → OpenAI Summarize</option>
+          <option value="webscrape_pdf_summarize">WebScrape → PDF → OpenAI Summarize</option>
+          <option value="speech_file_recognize">Speech (file) → Text</option>
+          <option value="youtube_title_filename">YouTube → Title Sanitized Filename</option>
+          <option value="extract_pdf_text">Extract PDF Text (presigned URL)</option>
+          <option value="extract_youtube_transcript">Extract YouTube Transcript</option>
+        </select>
+      </label>
+      <button id="btnLoadExample" aria-label="Load selected example workflow">Load</button>
+    </div>
+    <div class="right">
+      <label>Grid: <input type="checkbox" id="chkGrid" checked aria-label="Toggle grid display"></label>
+      <label>Snap: <input type="checkbox" id="chkSnap" checked aria-label="Toggle snap to grid"></label>
+      <button id="btnRun" aria-label="Run workflow" title="Run">Run</button>
+      <button id="btnStop" aria-label="Stop workflow" title="Stop" disabled>Stop</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="sidebar">
+      <h3>Palette</h3>
+      <div class="palette" role="toolbar" aria-label="Node palette">
+        <button class="palette-item" data-type="Start" aria-label="Add Start node">Start</button>
+        <button class="palette-item" data-type="Task" aria-label="Add Task node">Task</button>
+        <button class="palette-item" data-type="If" aria-label="Add If decision node">If</button>
+        <button class="palette-item" data-type="Switch" aria-label="Add Switch node">Switch</button>
+        <button class="palette-item" data-type="End" aria-label="Add End node">End</button>
+        <button class="palette-item" data-type="Sticky" aria-label="Add Sticky note">Sticky</button>
+        <button class="palette-item" data-type="Server" aria-label="Add Server node">Server</button>
+        <button class="palette-item" data-type="ServerFarm" aria-label="Add Server Farm node">Server Farm</button>
+        <button class="palette-item" data-type="ServerSwarm" aria-label="Add Server Swarm node">Server Swarm</button>
+      </div>
+      <h3>Properties</h3>
+      <div id="propPanel" class="props empty" role="region" aria-label="Node properties">Select a node</div>
+    </div>
+
+    <div class="canvas-container">
+      <svg id="edges" class="edges" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+      <div id="canvas" class="canvas" tabindex="0" role="application" aria-label="Workflow canvas" aria-describedby="canvas-instructions"></div>
+      <div id="canvas-instructions" class="sr-only">Use right-click to add nodes, drag to move nodes, and drag from ports to create connections.</div>
+      <div id="ctxMenu" class="ctx-menu" style="display:none" role="menu" aria-label="Context menu">
+        <button data-type="Task" role="menuitem">Add Task</button>
+        <button data-type="If" role="menuitem">Add If</button>
+        <button data-type="Switch" role="menuitem">Add Switch</button>
+        <button data-type="Sticky" role="menuitem">Add Sticky</button>
+        <button data-type="Server" role="menuitem">Add Server</button>
+        <button data-type="ServerFarm" role="menuitem">Add Server Farm</button>
+        <button data-type="ServerSwarm" role="menuitem">Add Server Swarm</button>
+        <hr>
+        <button data-type="End" role="menuitem">Add End</button>
+      </div>
+    </div>
+  </div>
+
+  <template id="tplNode">
+    <div class="node" draggable="true" role="button" tabindex="0" aria-label="Workflow node">
+      <div class="node-header">
+        <span class="node-icon" aria-hidden="true"></span>
+        <span class="node-type"></span>
+        <div class="node-tools">
+          <button class="node-dup" title="Duplicate" aria-label="Duplicate this node">⧉</button>
+          <button class="node-delete" title="Delete" aria-label="Delete this node">×</button>
+        </div>
+      </div>
+      <div class="node-title" contenteditable="true" spellcheck="false" aria-label="Node title">Untitled</div>
+      <div class="ports">
+        <div class="port out" data-port="out" title="Drag to connect" aria-label="Output port - drag to connect"></div>
+        <div class="port in" data-port="in" title="Input" aria-label="Input port"></div>
+      </div>
+      <div class="ports-out-list" aria-label="Additional output ports"></div>
+    </div>
+  </template>
+
+  <script src="core.js"></script>
+  <script src="ui.js"></script>
+  <script src="io.js"></script>
+  <script src="examples.js"></script>
+  <script src="main.js"></script>
+</body>
+</html> 

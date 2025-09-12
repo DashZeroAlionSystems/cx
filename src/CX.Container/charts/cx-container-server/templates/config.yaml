@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "cx-container-server.chart.name" . }}-config
+  labels:
+    app.kubernetes.io/name: {{ include "cx-container-server.chart.name" . }}-mutable-config
+    helm.sh/chart: {{ include "cx-container-server.chart.nameAndVersion" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+data:
+  appsettings.json: |
+    {{ include "cx-container-server.appsettings" . | nindent 4}}

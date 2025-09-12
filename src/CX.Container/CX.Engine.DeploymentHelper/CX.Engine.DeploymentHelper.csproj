@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CX.Clients.Afriforum.Domain\CX.Clients.Afriforum.Domain.csproj" />
+      <ProjectReference Include="..\CX.Engine.Assistants\CX.Engine.Assistants.csproj" />
+      <ProjectReference Include="..\CX.Engine.Importers\CX.Engine.Importers.csproj" />
+      <ProjectReference Include="..\CX.Engine.Registration.Full\CX.Engine.Registration.Full.csproj" />
+      <ProjectReference Include="..\CX.Engine.SharedOptions\CX.Engine.SharedOptions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IdentityModel" Version="7.0.0" />
+      <PackageReference Include="YamlDotNet" Version="16.0.0" />
+    </ItemGroup>
+
+</Project>

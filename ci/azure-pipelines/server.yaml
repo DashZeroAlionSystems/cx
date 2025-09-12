@@ -1,0 +1,30 @@
+name: $(date:yyyyMMdd)-$(SourceBranchName)-$(BuildID)
+trigger: 
+  batch: true
+  branches:
+    include:
+    - main
+    - development
+
+  paths:
+    include:
+      - src/CX.Container/*
+
+stages:
+
+- stage: BuildAndPackage
+
+  jobs:
+
+  - template: templates/jobs-package-helm-chart-as-artifact.yml
+    parameters:
+      Version: 1.0.$(Build.BuildId)
+      ChartPath: src/CX.Container/charts/cx-container-server
+     
+  - template: templates/jobs-build-microservice.yml
+    parameters:
+      Version: 1.0.$(Build.BuildId)
+      job:
+        name: BuildMicroService
+      ProjPath: 'src/CX.Container/CX.Container.Server'
+      DockerImg: 'ai/cx.container.server'

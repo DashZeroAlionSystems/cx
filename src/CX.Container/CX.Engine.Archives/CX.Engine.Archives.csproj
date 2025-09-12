@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="Pinecone">
+            <HintPath>Pinecone\Pinecone.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CX.Engine.Common\CX.Engine.Common.csproj" />      
+      <ProjectReference Include="..\CX.Engine.TextProcessors\CX.Engine.TextProcessors.csproj" />      
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CommunityToolkit.Diagnostics" Version="8.4.0" />
+      <PackageReference Include="IdentityModel" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>

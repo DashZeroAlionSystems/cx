@@ -1,0 +1,1 @@
+dotnet build .\src\CX.Container.Server\CX.Container.Server.csproj

@@ -1,0 +1,13 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: ai-core
+spec:
+  prefix: /_apis/ai-core
+  regex_rewrite:
+    pattern: /_apis/ai-core/*
+    substitution: /
+  service: {{ include "cx-container-server.chart.name" . }}:8080
+  timeout_ms: 0
+  host: {{ .Values.global.host }}
+  

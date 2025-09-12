@@ -1,0 +1,46 @@
+parameters:
+  - name: ProjPath
+    type: string
+  - name: DockerImg
+    type: string
+  - name: DockerImgTag
+    type: string
+    default: $(Build.BuildId)
+  - name: DockerRegistry
+    type: string
+    default: "vectormind"
+  
+
+steps:
+  - task: DockerInstaller@0
+    inputs:
+      dockerVersion: '17.09.0-ce'
+  
+  - task: Docker@2
+    displayName: "Registry Login"
+    inputs:
+      containerRegistry: '${{ parameters.DockerRegistry }}'
+      command: 'login'
+    
+  - task: Docker@2
+    displayName: "Build"
+    inputs:
+      containerRegistry: '${{ parameters.DockerRegistry }}'
+      repository: '${{ parameters.DockerImg }}'
+      command: 'build'
+      Dockerfile: '${{ parameters.ProjPath }}/Dockerfile'
+      buildContext: '${{ parameters.ProjPath }}'
+      tags: |
+        ${{ parameters.DockerImgTag }}
+        latest
+
+  - task: Docker@2
+    displayName: "Push image"
+    condition: ne(variables['Build.Reason'], 'PullRequest')
+    inputs:
+      command: push
+      containerRegistry: "${{ parameters.DockerRegistry }}"
+      repository: ${{ parameters.DockerImg }}
+      tags: |
+        ${{ parameters.DockerImgTag }}
+        latest

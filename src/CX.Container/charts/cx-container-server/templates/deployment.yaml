@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "cx-container-server.chart.name" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "cx-container-server.chart.name" . }}
+    helm.sh/chart: {{ include "cx-container-server.chart.nameAndVersion" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "cx-container-server.chart.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+{{- with .Values.deploymentStrategy }}
+  strategy:
+{{ toYaml . | trim | indent 4 }}
+{{- end }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "cx-container-server.chart.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+      volumes:
+        - name: config
+          configMap:
+            name: {{ include "cx-container-server.chart.name" . }}-config
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ printf "%s/%s:%s" (required "Please specify registryHost" .Values.image.registry) .Values.image.path (toString .Values.image.tag) | quote }}
+          resources:
+            requests:
+              memory: "1800Mi"
+              cpu: "1000m"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: config
+              mountPath: /app/config
+          env:
+          - name: DOTNET_USE_POLLING_FILE_WATCHER
+            value: "true"
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "Development"
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CX.Engine.CallAnalysis\CX.Engine.CallAnalysis.csproj" />
+      <ProjectReference Include="..\CX.Engine.ChatAgents\CX.Engine.ChatAgents.csproj" />
+      <ProjectReference Include="..\CX.Engine.CognitiveServices\CX.Engine.CognitiveServices.csproj" />
+      <ProjectReference Include="..\CX.Engine.Common\CX.Engine.Common.csproj" />
+      <ProjectReference Include="..\CX.Engine.Discord\CX.Engine.Discord.csproj" />
+      <ProjectReference Include="..\CX.Engine.Importers\CX.Engine.Importers.csproj" />
+      <ProjectReference Include="..\CX.Engine.QandA\CX.Engine.QandA.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IdentityModel" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>

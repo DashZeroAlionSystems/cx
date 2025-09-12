@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="8.1.1" />
+        <PackageReference Include="IdentityModel" Version="7.0.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0"/>
+        <PackageReference Include="xunit" Version="2.4.2"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="6.0.4">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\CX.Engine.Configuration\CX.Engine.Configuration.csproj"/>
+        <ProjectReference Include="..\CX.Engine.DocExtractors\CX.Engine.DocExtractors.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\Word.docx">
+          <LogicalName>Word.docx</LogicalName>
+        </EmbeddedResource>
+        <None Remove="TestFiles\UTF8.txt"/>
+        <None Remove="TestFiles\UTF8 BOM.txt"/>
+        <None Remove="TestFiles\UTF16 BE BOM.txt"/>
+        <None Remove="TestFiles\UTF16 LE BOM.txt"/>
+        <None Remove="TestFiles\withholding.csv"/>
+        <None Remove="TestFiles\Villa Abalex Insect Gel April 2023 Label.pdf"/>
+        <EmbeddedResource Include="Resources\This is a test.pdf" LogicalName = "This is a test.pdf" />
+        <EmbeddedResource Include="Resources\UTF16 BE BOM.txt">
+          <LogicalName>UTF16 BE BOM.txt</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Resources\UTF16 LE BOM.txt">
+          <LogicalName>UTF16 LE BOM.txt</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Resources\UTF8 BOM.txt">
+          <LogicalName>UTF8 BOM.txt</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Resources\UTF8.txt">
+          <LogicalName>UTF8.txt</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Resources\withholding.csv">
+          <LogicalName>withholding.csv</LogicalName>
+        </EmbeddedResource>
+        <None Remove="TestFiles\Word.docx" />
+    </ItemGroup>
+
+</Project>

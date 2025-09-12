@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CX.Engine.Assistants\CX.Engine.Assistants.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IdentityModel" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>

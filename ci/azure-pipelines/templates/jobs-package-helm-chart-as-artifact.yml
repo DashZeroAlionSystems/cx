@@ -1,0 +1,88 @@
+parameters:
+  - name: Version
+    type: string
+  - name: ChartPath
+    type: string
+    default: ''
+  - name: SkipPatchFilesStep
+    type: boolean
+    default: false
+  - name: UpdateDependency
+    type: boolean
+    default: false
+  - name: ImageTagBasePaths
+    type: object
+    default:
+    - /image/
+  - name: Pool
+    type: string
+    default: 'Azure Pipelines'
+  
+jobs:
+- job: PackageHelm
+  displayName: 'Package helm chart ${{ parameters.ChartPath }}'
+  pool: ${{ parameters.Pool }}
+  variables:
+    ChartPath: ${{ parameters.ChartPath }}
+    HELM_EXPERIMENTAL_OCI: 1
+    Version: ${{ parameters.Version }}
+  steps:
+    - checkout: self
+      clean: true
+      fetchDepth: 1
+      fetchTags: false
+    - bash: |
+        set -e
+        
+        if [ -z "$CHARTPATH" ]; then
+          echo "##vso[task.logissue type=error;]Missing template parameter \"ChartPath\""
+          echo "##vso[task.complete result=Failed;]"
+        fi
+      env:
+        CHARTPATH: ${{ parameters.ChartPath }}
+        Version: ${{ parameters.Version }}
+      displayName: 'parameter checks'
+    - task: HelmInstaller@1
+      displayName: 'Install Helm'
+      inputs:
+        helmVersionToInstall: 3.10.3
+    - ${{ if ne(parameters.SkipPatchFilesStep, true) }}:
+      - ${{ each imageBasePath in parameters.ImageTagBasePaths }}:
+        - task: geeklearningio.gl-vsts-tasks-file-patch.yaml-patch-task.YamlPatch@4
+          displayName: 'Patch files $(ChartPath)/values.yaml'
+          inputs:
+            YamlWorkingDir: '$(Build.SourcesDirectory)'
+            YamlTargetFilters: '$(ChartPath)/values.yaml'
+            YamlPatchContent: |-
+              = ${{ imageBasePath }}tag => "$(Version)"
+            OutputPatchFile: true
+            FailIfNoPatchApplied: true
+      - task: geeklearningio.gl-vsts-tasks-file-patch.yaml-patch-task.YamlPatch@4
+        displayName: 'Patch files $(ChartPath)/Chart.yaml'
+        inputs:
+          YamlWorkingDir: '$(Build.SourcesDirectory)'
+          YamlTargetFilters: '$(ChartPath)/Chart.yaml'
+          YamlPatchContent: |-
+            = /version => "$(Version)"
+          OutputPatchFile: true
+          FailIfNoPatchApplied: true
+    - bash: |
+        set -e
+        # Find BOM in charts that break helm deployments.
+        # Which Helm linting does not pick up (see https://github.com/helm/helm/issues/6081)      
+        find $(ChartPath) -not -path '*/.git/*' -type f -exec file {} + | grep "with BOM" 1>&2 || :
+      failOnStderr: true
+      displayName: 'Test for Byte Order Marks (BOM) in files'
+    - bash: |
+        set -e
+        helm lint --strict $(ChartPath)
+      displayName: 'Helm linting'
+    - task: CopyFiles@2
+      inputs:
+        sourceFolder: '$(Build.SourcesDirectory)'
+        contents: '$(ChartPath)/**/?(*.yaml|*.helmignore|*.tpl)'
+        targetFolder: '$(Build.ArtifactStagingDirectory)' 
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: charts'
+      inputs:        
+        ArtifactName: charts

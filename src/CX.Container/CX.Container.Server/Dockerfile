@@ -1,0 +1,64 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0
+
+# Set environment variables for logging
+ENV Logging__Console__FormatterName=Simple
+ENV Logging__Console__FormatterOptions__ColorBehavior=Enabled
+
+# Install dependencies for Python 3.12
+RUN apt-get update && \
+    apt-get install -y wget build-essential libssl-dev zlib1g-dev libncurses5-dev libgdbm-dev \
+    libnss3-dev libreadline-dev libffi-dev curl libbz2-dev && \
+    wget https://www.python.org/ftp/python/3.12.0/Python-3.12.0.tgz && \
+    tar -xf Python-3.12.0.tgz && \
+    cd Python-3.12.0 && \
+    ./configure --enable-optimizations && \
+    make -j $(nproc) && \
+    make altinstall && \
+    cd .. && \
+    rm -rf Python-3.12.0 Python-3.12.0.tgz && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* 
+
+# Install pip for Python 3.12
+RUN wget https://bootstrap.pypa.io/get-pip.py && \
+    python3.12 get-pip.py && \
+    rm get-pip.py 
+
+    RUN apt-get update && apt-get -f install && apt-get -y install wget gnupg2 apt-utils
+RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' >> /etc/apt/sources.list
+RUN apt-get update \
+&& apt-get install -y google-chrome-stable --no-install-recommends --allow-downgrades fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf
+RUN apt-get install -y poppler-utils
+RUN apt-get update && apt-get install -y libreoffice
+
+ENV Logging__Console__FormatterName=Simple
+ENV Logging__Console__FormatterOptions__ColorBehavior=Enabled
+ENV PUPPETEER_EXECUTABLE_PATH "/usr/bin/google-chrome-stable"
+
+ARG source
+
+# Expose port 8080
+EXPOSE 8080
+
+# Copy the application files to the container
+WORKDIR /app
+COPY ${source:-obj/Docker/publish} .
+
+# Copy the entire Py folder to a temporary location
+COPY Py /app/Py
+
+WORKDIR /app/Py
+RUN pip install -r requirements.txt
+
+WORKDIR /app
+
+# Useful if you want to test this dockerfile locally from your IDE
+# COPY bin/Debug/net8.0 /app
+# COPY appsettings.Development.json /app/appsettings.json
+# COPY cx.engine /root/.microsoft/usersecrets/cx.engine
+
+# ENTRYPOINT ["/bin/bash"]
+
+# Set the entry point for the application
+ENTRYPOINT ["dotnet", "CX.Container.Server.dll"]

@@ -1,0 +1,121 @@
+global:
+  host: '#{CLIENT_FQDN}'
+  environment: '#{ENVIRONMENT_NAMESPACE}'
+image:
+  registry: vectormind.azurecr.io
+  path: ai/cx.container.server
+  tag: latest
+  pullPolicy: IfNotPresent
+Config:
+  Bump: 1
+  LogLevelOptions:
+    Default: Information
+    Microsoft: Information
+    Microsoft.AspNetCore: Information
+    System: Information
+    System.Net: Information
+    Microsoft.EntityFrameworkCore.Database.Command: Warning
+  OAuth:
+    Authority: "https://#{CLIENT_FQDN}/security"
+    Audience: "vectormind.client api"    
+  AiServer:
+    UseVectorLinkImporter: '#{IMPORTER_USE_VECTORLINK}'
+    UseVectorLinkDocumentExtractors: '#{IMPORTER_USE_VECTORLINK_DOCUMENTEXTRACTORS}'
+    ChannelName: '#{CHANNEL_NAME}'
+    HttpTimeoutSeconds: 60
+    AutoProcess: true
+    DecoratorUrl: http://data-ingress:8000/api/v1/decorator/document/
+    DecoratorStatusUrl: http://data-ingress:8000/api/v1/decorator/train-status/
+    DeleteUrl: http://data-train:8000/api/v1/delete/file/
+    Chat:
+      Url: http://ai-server:8000/v1/chat/
+      ApiKey: '#{AI_SERVER_INTEGRATION_API_KEY}'
+    Train:
+      Url: http://data-train:8000/api/v1/train/document/
+      ApiKey: '#{AI_SERVER_INTEGRATION_API_KEY}'
+      Namespace: '#{PINECONE_NAMESPACE}'
+      IndexName: '#{PINECONE_INDEX_NAME}'
+    Document:
+      Url: http://data-ingress:8000
+      ApiKey: '#{AI_SERVER_INTEGRATION_API_KEY}'
+      ProcessDocumentUrl: http://data-ingress:8000/api/v1/fetcher/process-document/
+      ProcessDocumentStatusUrl: http://data-ingress:8000/api/v1/fetcher/task-status/
+  Pinecone:
+    ApiKey: '#{PINECONE_API_KEY}'
+    IndexName: '#{PINECONE_INDEX_NAME}'
+    Namespace: '#{PINECONE_NAMESPACE}'
+    EmbeddingModel: '#{EMBEDDINGS_MODEL_NAME}'
+  Langfuse:
+    Host: '#{LANGFUSE_HOST}'
+    PublicKey: '#{LANGFUSE_PUBLIC_KEY}'
+    SecretKey: '#{LANGFUSE_SECRET_KEY}'
+    TraceImports: '#{LANGFUSE_TRACE_IMPORTS}'
+  Walter1Assistant:
+    ChatAgent: OpenAI.gpt-4o-mini
+    MinSimilarity: '#{ASSISTANT_MIN_SIMILARITY}'
+    CutoffContextTokens: '#{ASSISTANT_CUTOFF_CONTEXT_TOKENS}'
+    CutoffHistoryTokens: 9000
+    DefaultSystemPrompt: '#{ASSISTANT_CHAT_PROMPT}'
+    DefaultContextualizePrompt: '#{ASSISTANT_CONTEXTUALIZE_PROMPT}'
+    TextProcessor1: '#{ASSISTANT_TEXT_PROCESSOR_1}'
+    TextProcessor2: '#{ASSISTANT_TEXT_PROCESSOR_2}'
+  AzureAITranslator:
+    ApiKey: '#{AZURE_TRANSLATOR_API_KEY}'
+  Data:
+    ConnectionString: Server=#{POSTGRESQL_DB_SERVER};Database=dashboard-server-#{ENVIRONMENT};User Id=#{POSTGRESQL_DB_USER};Password=#{POSTGRESQL_DB_PASSWORD};Maximum Pool Size=#{POSTGRESQL_DB_POOL_SIZE};Write Buffer Size=80000;
+  BucketStorage:
+    PublicBucketName: '#{AWS_BUCKET_NAME_PUBLIC}'
+    PrivateBucketName: '#{AWS_BUCKET_NAME_PRIVATE}'
+    AwsRegion: '#{AWS_BUCKET_REGION}'
+    AwsAccessKeyId: '#{AWS_BUCKET_KEY_ID}'
+    AwsAccessKey: '#{AWS_BUCKET_SECRET}'
+    AwsSession: vectormind-production
+  OpenAiServer:
+    ApiKey: '#{OPENAI_API_KEY}'
+    ApiUrl: https://api.openai.com/v1/chat/completions
+    ModelName: '#{OPENAI_MODEL_NAME}'
+    PromptKey: '#{OPENAI_PROMPT_KEY}'
+    PromptSubject: '#{OPENAI_PROMPT_SUBJECT}'
+    Prompt: '#{OPENAI_PROMPT}'
+  AzureContentSafety:
+    ApiKey: '#{AZURE_CONTENT_SAFETY_API_KEY}'
+    Endpoint: '#{AZURE_CONTENT_SAFETY_ENDPOINT}'
+  ContextAI:
+    Host: '#{CONTEXTAI_HOST}'
+    ApiKey: '#{CONTEXTAI_API_KEY}'
+  Attachments:
+    BaseUrl: '#{ARCHIVE_ATTACHMENTS_BASE_URL}'
+  LineSplitter:
+    SegmentTokenLimit: '#{LINE_SPLITTER_SEGMENT_TOKEN_LIMIT}'
+  VectorLinkImporter:
+    ExtractImages: '#{IMPORTER_EXTRACT_IMAGES}'
+    TextProcessor1: '#{IMPORTER_TEXT_PROCESSOR_1}'
+    TrainCitations: '#{IMPORTER_TRAIN_CITATIONS}'
+    AttachToSelf: '#{IMPORTER_DEFAULT_ATTACH_TO_SELF}'
+    DefaultAttachPageImages: '#{IMPORTER_DEFAULT_ATTACH_PAGE_IMAGES}'
+    PreferImageTextExtraction: '#{IMPORTER_PREFER_IMAGE_TEXT_EXTRACTION}'
+    MaxConcurrency: 1
+  Gpt4Vision:
+    SystemPrompt: '#{GPT4_VISION_SYSTEM_PROMPT}'
+    Question: '#{GPT4_VISION_QUESTION}'
+  StructuredData:
+    ApiKey: '#{STUCTURED_DATA_API_KEY}'
+    ApiSecret: '#{STUCTURED_DATA_API_SECRET}'
+  Weelee:
+    ClientId: '#{WEELEE_CLIENT_ID}'
+    ClientSecret: '#{WEELEE_CLIENT_SECRET}'
+    Username: '#{WEELEE_USERNAME}'
+    Password: '#{WEELEE_PASSWORD}'
+    RequestUrl: '#{WEELEE_REQUEST_URL}'
+replicaCount: 1
+deploymentStrategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 1
+    maxUnavailable: 1
+ingress:
+  annotations: {}
+fullnameOverride: ''
+nameOverride: ''
+nodeSelector: {}
+tolerations: []

@@ -1,0 +1,48 @@
+name: $(date:yyyyMMdd)-$(SourceBranchName)-$(BuildID)
+trigger: 
+  batch: true
+  branches:
+    include:
+    - main
+    - development
+    - releases/**
+    - playground
+  paths:
+    include:
+      - src/VectorMind.Server/*
+
+resources:
+  repositories:
+    - repository: dashboard-server
+      type: git
+      name: dashboard-server
+      ref: development
+
+stages:
+- stage: Versioning
+  jobs:
+  - template: templates/jobs-versioning.yml
+
+- stage: BuildAndPackage
+  variables:
+    Version: $[ stageDependencies.Versioning.SemVerCalculation.outputs['outputVars.Version'] ]
+  dependsOn: Versioning
+  jobs:
+
+  - template: templates/jobs-package-helm-chart-as-artifact.yml
+    parameters:
+      Version: $(Version)
+      ChartPath: src/VectorMind.Server/charts/vector-mind-server
+     
+  - template: templates/jobs-build-microservice.yml
+    parameters:
+      Version: $(Version)
+      job:
+        name: BuildMicroService
+      ProjPath: 'src/VectorMind.Server/Aela.Server'
+      DockerImg: 'server/vector.mind.server.api'
+
+  - template: templates/jobs-git-tag.yml
+    parameters:
+      checkout: dashboard-server
+

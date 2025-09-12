@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>f2894196-57f2-414c-8739-a5e0c4e412be</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DocumentationFile>bin\Debug\CX.Container.Server.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591;8632</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DocumentationFile>bin\Release\CX.Container.Server.xml</DocumentationFile>
+    <NoWarn>1701;1702;l591;8632</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="appsettings.json" />
+    <None Include="appsettings.Development.json">
+      <DependentUpon>appsettings.json</DependentUpon>
+    </None>
+
+    <Content Remove="charts\**" />
+    <None Include="charts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ardalis.SmartEnum" Version="7.0.0" />
+    <PackageReference Include="Auth0.AuthenticationApi" Version="7.26.1" />
+    <PackageReference Include="Auth0.ManagementApi" Version="7.26.1" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.300" />
+    <PackageReference Include="CsvHelper" Version="31.0.2" />
+    <PackageReference Include="IdentityModel" Version="7.0.0" />
+    <PackageReference Include="Kelter.Forks.YoutubeTranscriptApi" Version="0.4.2" />
+    <PackageReference Include="MassTransit" Version="8.1.3" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.1.3" />
+    <PackageReference Include="Destructurama.Attributed" Version="3.1.0" />
+    <PackageReference Include="EFCore.NamingConventions" Version="9.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+    <PackageReference Include="HeimGuard" Version="1.0.0" />
+    <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="6.5.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+    <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.38.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="NAudio.Lame" Version="2.1.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.7.0" />
+    <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.5.1" />
+    <PackageReference Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.7.0" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.7.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.9.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.6.0-beta.3" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.EntityFrameworkCore" Version="1.0.0-beta.8" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.EventCounters" Version="1.5.1-alpha.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.9.0" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" Version="1.5.1" />
+    <PackageReference Include="PdfPig" Version="0.1.8" />
+    <PackageReference Include="Polly" Version="8.2.1" />
+    <PackageReference Include="Polly.Extensions" Version="8.2.1" />
+    <PackageReference Include="PuppeteerSharp" Version="18.0.3" />
+    <PackageReference Include="QueryKit" Version="1.1.0" />
+    <PackageReference Include="Riok.Mapperly" Version="3.3.0" />
+    <PackageReference Include="Sentry.AspNetCore" Version="5.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+
+    <PackageReference Include="VideoLibrary" Version="3.2.4" />
+    <PackageReference Include="YoutubeExplode" Version="6.3.16" />
+    <PackageReference Include="ZiggyCreatures.FusionCache" Version="0.24.0" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\Services\ConsumerRegistrations\" />
+    <Folder Include="Extensions\Services\ProducerRegistrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CX.Clients.Afriforum.Domain\CX.Clients.Afriforum.Domain.csproj" />
+    <ProjectReference Include="..\CX.Clients.Weelee.Domain\CX.Clients.Weelee.Domain.csproj" />
+    <ProjectReference Include="..\CX.Engine.Assistants\CX.Engine.Assistants.csproj" />
+    <ProjectReference Include="..\CX.Engine.Common\CX.Engine.Common.csproj" />
+    <ProjectReference Include="..\CX.Engine.Configuration\CX.Engine.Configuration.csproj" />
+    <ProjectReference Include="..\CX.Engine.DocExtractors\CX.Engine.DocExtractors.csproj" />
+    <ProjectReference Include="..\CX.Engine.Importers\CX.Engine.Importers.csproj" />
+    <ProjectReference Include="..\CX.Engine.Registration.Full\CX.Engine.Registration.Full.csproj" />
+    <ProjectReference Include="..\CX.Engine.SharedOptions\CX.Engine.SharedOptions.csproj" />
+  </ItemGroup>
+</Project>

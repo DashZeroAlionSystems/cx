@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CX.Engine.ChatAgents\CX.Engine.ChatAgents.csproj" />
+      <ProjectReference Include="..\CX.Engine.CognitiveServices\CX.Engine.CognitiveServices.csproj" />
+      <ProjectReference Include="..\CX.Engine.Common\CX.Engine.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IdentityModel" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>

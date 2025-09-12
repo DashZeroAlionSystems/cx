@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IdentityModel" Version="7.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore" Version="2.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Routing" Version="2.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Core" Version="2.3.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Https" Version="2.3.0" />
+      <PackageReference Include="MoonSharp" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CX.Engine.ChatAgents\CX.Engine.ChatAgents.csproj" />
+      <ProjectReference Include="..\CX.Engine.Common\CX.Engine.Common.csproj" />
+      <ProjectReference Include="..\CX.Engine.Importers\CX.Engine.Importers.csproj" />
+      <ProjectReference Include="..\CX.Engine.QandA\CX.Engine.QandA.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.AspNetCore.Cors" />
+    </ItemGroup>
+
+</Project>

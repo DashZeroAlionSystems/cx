@@ -1,0 +1,29 @@
+parameters:
+  Job:
+    Name: ''
+    DependsOn: ''
+    Condition: succeeded()
+  Pool: 'Azure Pipelines'
+  ProjPath: ''
+  DockerImg: ''
+  DockerImgTag: ''
+
+jobs:
+  - job: ${{ parameters.job.Name }}
+    displayName: 'Build ${{ parameters.ProjPath }}'
+    dependsOn: ${{ parameters.Job.DependsOn }}
+    condition: ${{ parameters.Job.Condition }}
+    container:
+      image: catthehacker/ubuntu:act-latest
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - checkout: self
+        clean: true
+        fetchDepth: 1
+        fetchTags: false
+      - template: steps-build-dockerfile.yml
+        parameters:
+          ProjPath: ${{ parameters.ProjPath }}
+          DockerImg: ${{ parameters.DockerImg }}
+          DockerImgTag: ${{ parameters.DockerImgTag }}

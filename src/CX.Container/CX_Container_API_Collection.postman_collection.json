@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "cx-container-api-collection",
+		"name": "CX Container API Collection",
+		"description": "API collection for CX Container Server - Document processing and analysis endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GPT Vision Extractor",
+			"item": [
+				{
+					"name": "Extract Text from Image/PDF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text",
+								"description": "Bearer token for authentication"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "Image or PDF file to extract text from (JPG, PNG, GIF, WebP, PDF)"
+								},
+								{
+									"key": "metadata.Id",
+									"value": "{{$guid}}",
+									"type": "text",
+									"description": "Optional: Document ID",
+									"disabled": true
+								},
+								{
+									"key": "metadata.Pages",
+									"value": "1",
+									"type": "text",
+									"description": "Optional: Number of pages",
+									"disabled": true
+								},
+								{
+									"key": "metadata.ContainsTables",
+									"value": "false",
+									"type": "text",
+									"description": "Optional: Whether document contains tables",
+									"disabled": true
+								},
+								{
+									"key": "metadata.Description",
+									"value": "Sample document",
+									"type": "text",
+									"description": "Optional: Document description",
+									"disabled": true
+								},
+								{
+									"key": "metadata.SourceDocument",
+									"value": "test-doc.pdf",
+									"type": "text",
+									"description": "Optional: Source document name",
+									"disabled": true
+								},
+								{
+									"key": "metadata.Organization",
+									"value": "Test Org",
+									"type": "text",
+									"description": "Optional: Organization name",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/Gpt4VisionExtractor/extract",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"Gpt4VisionExtractor",
+								"extract"
+							]
+						},
+						"description": "Extracts text from images and PDF files using GPT-4 Vision AI. Supports JPG, PNG, GIF, WebP, and PDF formats. Returns both formatted and raw extracted text."
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/Gpt4VisionExtractor/extract",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"Gpt4VisionExtractor",
+										"extract"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"extractedText\": \"This is the formatted extracted text from the document...\",\n    \"rawText\": \"This is the raw extracted text without formatting...\",\n    \"fileType\": \".pdf\",\n    \"processingTime\": \"2024-01-15T10:30:00Z\"\n}"
+						}
+					]
+				}
+			],
+			"description": "GPT-4 Vision powered text extraction from images and PDFs"
+		},
+		{
+			"name": "Call Analyzer",
+			"item": [
+				{
+					"name": "Analyze Audio Call",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text",
+								"description": "Bearer token for authentication"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "Audio file to analyze (WAV, MP3, OGG, M4A)"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/call-analyzer/{{analyzer_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"call-analyzer",
+								"{{analyzer_id}}"
+							]
+						},
+						"description": "Analyzes audio call files using a specific call analyzer. Supports WAV, MP3, OGG, and M4A audio formats. Requires an analyzer ID parameter."
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/call-analyzer/sample-analyzer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"call-analyzer",
+										"sample-analyzer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"analysisResults\": {\n        \"sentiment\": \"positive\",\n        \"keywords\": [\"customer\", \"service\", \"satisfaction\"],\n        \"duration\": 180,\n        \"transcription\": \"Hello, how can I help you today?\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Audio call analysis and processing"
+		},
+		{
+			"name": "Document Converter",
+			"item": [
+				{
+					"name": "Convert DOCX to PDF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text",
+								"description": "Bearer token for authentication"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "DOCX file to convert to PDF"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/DocXToPDF/convert",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"DocXToPDF",
+								"convert"
+							]
+						},
+						"description": "Converts Microsoft Word DOCX files to PDF format while maintaining document formatting and layout."
+					},
+					"response": [
+						{
+							"name": "Success Response (PDF File)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/DocXToPDF/convert",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"DocXToPDF",
+										"convert"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/pdf"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment; filename=\"document.pdf\""
+								}
+							],
+							"cookie": [],
+							"body": "[PDF Binary Content]"
+						}
+					]
+				}
+			],
+			"description": "Document format conversion services"
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://localhost:7001",
+			"description": "Base URL for the CX Container API (update with your actual server URL)"
+		},
+		{
+			"key": "access_token",
+			"value": "your-bearer-token-here",
+			"description": "Authentication bearer token"
+		},
+		{
+			"key": "analyzer_id",
+			"value": "default-analyzer",
+			"description": "Call analyzer ID to use for audio analysis"
+		}
+	]
+} 

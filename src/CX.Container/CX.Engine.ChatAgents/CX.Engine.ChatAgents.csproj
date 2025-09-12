@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CX.Engine.Common\CX.Engine.Common.csproj" />
+      <ProjectReference Include="..\CX.Engine.TextProcessors\CX.Engine.TextProcessors.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IdentityModel" Version="7.0.0" />
+      <PackageReference Include="OpenAI" Version="2.0.0-beta.8" />
+      <PackageReference Include="System.Net.ServerSentEvents" Version="9.0.0" />
+    </ItemGroup>
+
+</Project>

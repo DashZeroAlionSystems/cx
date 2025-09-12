@@ -1,0 +1,3148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CX.Container.Server</name>
+    </assembly>
+    <members>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivitiesController.GetAgriculturalActivities(CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityParametersDto)">
+            <summary>
+            Gets a list of all AgriculturalActivities.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivitiesController.GetAllAgriculturalActivities">
+            <summary>
+            Gets a list of all AgriculturalActivities.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivitiesController.GetAgriculturalActivity(System.Guid)">
+            <summary>
+            Gets a single AgriculturalActivity by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivitiesController.AddAgriculturalActivity(CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForCreationDto)">
+            <summary>
+            Creates a new AgriculturalActivity record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivitiesController.UpdateAgriculturalActivity(System.Guid,CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForUpdateDto)">
+            <summary>
+            Updates an entire existing AgriculturalActivity.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivitiesController.DeleteAgriculturalActivity(System.Guid)">
+            <summary>
+            Deletes an existing AgriculturalActivity record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivityTypesController.GetAgriculturalActivityTypes(CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeParametersDto)">
+            <summary>
+            Gets a list of all AgriculturalActivityTypes.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivityTypesController.GetAllAgriculturalActivityTypes">
+            <summary>
+            Gets a list of all AgriculturalActivityTypes.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivityTypesController.GetAgriculturalActivityType(System.Guid)">
+            <summary>
+            Gets a single AgriculturalActivityType by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivityTypesController.AddAgriculturalActivityType(CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeForCreationDto)">
+            <summary>
+            Creates a new AgriculturalActivityType record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivityTypesController.UpdateAgriculturalActivityType(System.Guid,CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeForUpdateDto)">
+            <summary>
+            Updates an entire existing AgriculturalActivityType.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.AgriculturalActivityTypesController.DeleteAgriculturalActivityType(System.Guid)">
+            <summary>
+            Deletes an existing AgriculturalActivityType record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.CountriesController.GetCountries(CX.Container.Server.Domain.Countries.Dtos.CountryParametersDto)">
+            <summary>
+            Gets a list of all Countries.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.CountriesController.GetAllCountries">
+            <summary>
+            Gets a list of all Countries.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.CountriesController.GetCountry(System.Guid)">
+            <summary>
+            Gets a single Country by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.CountriesController.AddCountry(CX.Container.Server.Domain.Countries.Dtos.CountryForCreationDto)">
+            <summary>
+            Creates a new Country record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.CountriesController.UpdateCountry(System.Guid,CX.Container.Server.Domain.Countries.Dtos.CountryForUpdateDto)">
+            <summary>
+            Updates an entire existing Country.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.CountriesController.DeleteCountry(System.Guid)">
+            <summary>
+            Deletes an existing Country record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.DashboardsController.GetClientSummary">
+            <summary>
+            Gets client summary.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.DashboardsController.GetProjectSummary(System.Guid)">
+            <summary>
+            Gets project summary.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.DBActionController.FixSourceDocuments">
+            <summary>
+            Gets a list of all SourceDocuments.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.MessagesController.GetMessages(CX.Container.Server.Domain.Messages.Dtos.MessageParametersDto)">
+            <summary>
+            Gets a list of all Messages.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.MessagesController.GetMessagesByThread(System.Guid)">
+            <summary>
+            Gets a list of all Messages related to the specified Thread.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.MessagesController.GetAllMessages">
+            <summary>
+            Gets a list of all Messages.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.MessagesController.GetMessage(System.Guid)">
+            <summary>
+            Gets a single Message by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.MessagesController.AddMessage(CX.Container.Server.Domain.Messages.Dtos.MessageForCreationDto)">
+            <summary>
+            Creates a new Message record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.MessagesController.UpdateMessage(System.Guid,CX.Container.Server.Domain.Messages.Dtos.MessageForUpdateDto)">
+            <summary>
+            Updates an entire existing Message.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.MessagesController.DeleteMessage(System.Guid)">
+            <summary>
+            Deletes an existing Message record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.GetNodes(CX.Container.Server.Domain.Nodes.Dtos.NodeParametersDto)">
+            <summary>
+            Gets a paginated list of Nodes by Project Id.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.GetNodes(System.Guid)">
+            <summary>
+            Gets a list of Nodes by Project Id.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.GetChildNodes(System.Guid)">
+            <summary>
+            Gets a list of Child Nodes by Parent Id.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.GetNode(System.Guid)">
+            <summary>
+            Gets a Node by Id.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.GetRootNode(System.Guid)">
+            <summary>
+            Gets Root Node of Project Id.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.AddNode(CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto)">
+            <summary>
+            Creates a new Node.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.UpdateNode(System.Guid,CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto)">
+            <summary>
+            Updates a Node.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.UpdateNodeParent(System.Guid,CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateParentDto)">
+            <summary>
+            Updates a Node's Parent.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.UploadAsset(CX.Container.Server.Domain.Nodes.Dtos.NodeForFileUploadDto)">
+            <summary>
+            Uploads a PDF document of node and returns meta data.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.DeleteNode(System.Guid)">
+            <summary>
+            Deletes a Node.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.DeleteFile(System.Guid)">
+            <summary>
+            Deletes a Node's file.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.TrainNode(System.Guid)">
+            <summary>
+            Start training a Node Asset.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.ImportNodeCategories(CX.Container.Server.Domain.Nodes.Dtos.NodeForFileImportDto)">
+            <summary>
+            Import Node Categories from csv file
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.NodesController.ExportNodeCategories(System.Guid)">
+            <summary>
+            Export Node Categories to csv file
+            </summary>    
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.PermissionsController.GetPermissions">
+            <summary>
+            Gets a list of all available permissions.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.PermissionsController.GetAssignedPermissions">
+            <summary>
+            Gets a list of the current user's assigned permissions.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.PreferencesController.GetPreferences(CX.Container.Server.Domain.Preferences.Dtos.PreferenceParametersDto)">
+            <summary>
+            Gets a list of all Preferences.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.PreferencesController.GetAllPreferences">
+            <summary>
+            Gets a list of all Preferences.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.PreferencesController.GetPreference(System.Guid)">
+            <summary>
+            Gets a single Preference by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.PreferencesController.AddPreference(CX.Container.Server.Domain.Preferences.Dtos.PreferenceForCreationDto)">
+            <summary>
+            Creates a new Preference record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.PreferencesController.UpdatePreference(System.Guid,CX.Container.Server.Domain.Preferences.Dtos.PreferenceForUpdateDto)">
+            <summary>
+            Updates an entire existing Preference.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.PreferencesController.DeletePreference(System.Guid)">
+            <summary>
+            Deletes an existing Preference record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProcessSourceDocumentsController.ProcessSourceDocument(System.String)">
+            <summary>
+            Processes a Source Document.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProcessSourceDocumentsController.ResetAllErrorStates">
+            <summary>
+            Reset All Error Documents State
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProcessSourceDocumentsController.ResetErrorState(System.String)">
+            <summary>
+            Reset Error Document State
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProcessSourceDocumentsController.DeleteSourceDocument(System.String)">
+            <summary>
+            Delete and Requeue a Document.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProfilesController.GetProfiles(CX.Container.Server.Domain.Profiles.Dtos.ProfileParametersDto)">
+            <summary>
+            Gets a list of all Profiles.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProfilesController.GetAllProfiles">
+            <summary>
+            Gets a list of all Profiles.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProfilesController.GetProfile(System.Guid)">
+            <summary>
+            Gets a single Profile by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProfilesController.GetProfilesByUser">
+            <summary>
+            Gets a list of all Profiles for the current user.
+            <remarks>
+            The current user is determined by the JWT token.
+            </remarks>
+            </summary>
+            <returns>List of <see cref="T:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto"/> records.</returns>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProfilesController.AddProfile(CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto)">
+            <summary>
+            Creates a new Profile record.
+            <remarks>
+            Automatically assigns the Logged-in User as the owner of the Profile if no UserId was specified on <see cref="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.UserId"/>
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProfilesController.UpdateProfile(System.Guid,CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto)">
+            <summary>
+            Updates an entire existing Profile.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProfilesController.DeleteProfile(System.Guid)">
+            <summary>
+            Deletes an existing Profile record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProjectsController.GetProjects(CX.Container.Server.Domain.Projects.Dtos.ProjectParametersDto)">
+            <summary>
+            Gets a paginated list of all Projects
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProjectsController.GetAllProjects">
+            <summary>
+            Gets a list of all Projects
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProjectsController.GetProject(System.Guid)">
+            <summary>
+            Gets a Project by Id
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProjectsController.AddProject(CX.Container.Server.Domain.Projects.Dtos.ProjectForCreationDto)">
+            <summary>
+            Creates a new Project
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProjectsController.UpdateProject(System.Guid,CX.Container.Server.Domain.Projects.Dtos.ProjectForUpdateDto)">
+            <summary>
+            Updates existing Project
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ProjectsController.DeleteProject(System.Guid)">
+            <summary>
+            Deletes a Project
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.RolePermissionsController.GetRolePermissions(CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionParametersDto)">
+            <summary>
+            Gets a list of all RolePermissions.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.RolePermissionsController.GetRolePermission(System.Guid)">
+            <summary>
+            Gets a single RolePermission by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.RolePermissionsController.AddRolePermission(CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionForCreationDto)">
+            <summary>
+            Creates a new RolePermission record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.RolePermissionsController.UpdateRolePermission(System.Guid,CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionForUpdateDto)">
+            <summary>
+            Updates an entire existing RolePermission.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.RolePermissionsController.DeleteRolePermission(System.Guid)">
+            <summary>
+            Deletes an existing RolePermission record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.RolesController.GetRoles">
+            <summary>
+            Gets a list of all available roles.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourceDocumentsController.GetSourceDocuments(CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentParametersDto)">
+            <summary>
+            Gets a list of all SourceDocuments.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourceDocumentsController.GetAllSourceDocuments">
+            <summary>
+            Gets a list of all SourceDocuments.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourceDocumentsController.GetSourceDocument(System.Guid)">
+            <summary>
+            Gets a single SourceDocument by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourceDocumentsController.GetSourceDocumentByNodeId(System.Guid)">
+            <summary>
+            Gets a single SourceDocument by Node ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourceDocumentsController.AddSourceDocument(CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto)">
+            <summary>
+            Creates a new SourceDocument record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourceDocumentsController.UpdateSourceDocument(System.Guid,CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto)">
+            <summary>
+            Updates an entire existing SourceDocument.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourceDocumentsController.UploadSourceDocuments(CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForFileUploadDto)">
+            <summary>
+            Uploads a PDF Document and Create a DB Record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourceDocumentsController.DeleteSourceDocument(System.Guid)">
+            <summary>
+            Deletes an existing SourceDocument record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourcesController.GetSources(CX.Container.Server.Domain.Sources.Dtos.SourceParametersDto)">
+            <summary>
+            Gets a list of all Sources.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourcesController.GetAllSources">
+            <summary>
+            Gets a list of all Sources.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourcesController.GetSource(System.Guid)">
+            <summary>
+            Gets a single Source by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourcesController.AddSource(CX.Container.Server.Domain.Sources.Dtos.SourceForCreationDto)">
+            <summary>
+            Creates a new Source record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourcesController.UpdateSource(System.Guid,CX.Container.Server.Domain.Sources.Dtos.SourceForUpdateDto)">
+            <summary>
+            Updates an entire existing Source.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.SourcesController.DeleteSource(System.Guid)">
+            <summary>
+            Deletes an existing Source record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ThreadsController.GetThreads(CX.Container.Server.Domain.Threads.Dtos.ThreadParametersDto)">
+            <summary>
+            Gets a list of all Threads.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ThreadsController.GetAllThreads">
+            <summary>
+            Gets a list of all Threads.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ThreadsController.GetThread(System.Guid)">
+            <summary>
+            Gets a single Thread by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ThreadsController.GetThreadsByUser">
+            <summary>
+            Gets a list of all Threads for the logged-in user.
+            <remarks>UserId extracted from the NameIdentifier claim on the JWT.</remarks>
+            </summary>
+            <returns>List of Threads.</returns>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ThreadsController.AddThread(CX.Container.Server.Domain.Threads.Dtos.ThreadForCreationDto)">
+            <summary>
+            Creates a new Thread record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ThreadsController.UpdateThread(System.Guid,CX.Container.Server.Domain.Threads.Dtos.ThreadForUpdateDto)">
+            <summary>
+            Updates an entire existing Thread.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.ThreadsController.DeleteThread(System.Guid)">
+            <summary>
+            Deletes an existing Thread record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UiLogsController.GetUiLogs(CX.Container.Server.Domain.UiLogs.Dtos.UiLogsParametersDto)">
+            <summary>
+            Gets a list of all UiLogs.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UiLogsController.GetUiLogs(System.Guid)">
+            <summary>
+            Gets a single UiLogs by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UiLogsController.AddUiLogs(CX.Container.Server.Domain.UiLogs.Dtos.UiLogsForCreationDto)">
+            <summary>
+            Creates a new UiLogs record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UiLogsController.UpdateUiLogs(System.Guid,CX.Container.Server.Domain.UiLogs.Dtos.UiLogsForUpdateDto)">
+            <summary>
+            Updates an entire existing UiLogs.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UiLogsController.DeleteUiLogs(System.Guid)">
+            <summary>
+            Deletes an existing UiLogs record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UsersController.AddRole(System.String,System.String)">
+            <summary>
+            Adds a new role to a user.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UsersController.RemoveRole(System.String,System.String)">
+            <summary>
+            Removes a role from a User
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UsersController.GetUsers(CX.Container.Server.Domain.Users.Dtos.UserParametersDto)">
+            <summary>
+            Gets a list of all Users.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UsersController.GetUser(System.String)">
+            <summary>
+            Gets a single User by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UsersController.AddUser(CX.Container.Server.Domain.Users.Dtos.UserForCreationDto)">
+            <summary>
+            Creates a new User record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UsersController.UpdateUser(System.String,CX.Container.Server.Domain.Users.Dtos.UserForUpdateDto)">
+            <summary>
+            Updates an entire existing User.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UsersController.DeleteUser(System.String)">
+            <summary>
+            Deletes an existing User record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v1.UsersController.DeleteMine">
+            <summary>
+            Deletes the logged-in user's User record.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v2.ProcessSourceDocumentsController.DeleteAndRetrainWithOverride(System.String,System.Boolean)">
+            <summary>
+            Delete and Requeue a Document. Can Override the document if it is NOT in a trainingdone state.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v2.ProfilesController.GetProfiles(CX.Container.Server.Domain.Profiles.Dtos.ProfileParametersDto)">
+            <summary>
+            Gets a list of all Profiles.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v2.ProfilesController.GetAllProfiles">
+            <summary>
+            Gets a list of all Profiles.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v2.ProfilesController.GetProfile(System.Guid)">
+            <summary>
+            Gets a single Profile by ID.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v2.ProfilesController.GetProfilesByUser">
+            <summary>
+            Gets a list of all Profiles for the current user.
+            <remarks>
+            The current user is determined by the JWT token.
+            </remarks>
+            </summary>
+            <returns>List of <see cref="T:CX.Container.Server.Domain.Profiles.Dtos.ProfileDtoV2"/> records.</returns>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v2.ProfilesController.AddProfile(CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDtoV2)">
+            <summary>
+            Creates a new Profile record.
+            <remarks>
+            Automatically assigns the Logged-in User as the owner of the Profile if no UserId was specified on <see cref="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.UserId"/>
+            </remarks>
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Controllers.v2.ProfilesController.UpdateProfile(System.Guid,CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDtoV2)">
+            <summary>
+            Updates an entire existing Profile.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.AgriculturalActivityConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.AgriculturalActivities.AgriculturalActivity})">
+            <summary>
+            The database configuration for AgriculturalActivities. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.AgriculturalActivityTypeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.AgriculturalActivityTypes.AgriculturalActivityType})">
+            <summary>
+            The database configuration for AgriculturalActivityTypes. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.CountryConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.Countries.Country})">
+            <summary>
+            The database configuration for Countries. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.MessageConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.Messages.Message})">
+            <summary>
+            The database configuration for Messages. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.NodeConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.Nodes.Node})">
+            <summary>
+            The database configuration for Nodes. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.PreferenceConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.Preferences.Preference})">
+            <summary>
+            The database configuration for Preferences. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.ProfileConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.Profiles.Profile})">
+            <summary>
+            The database configuration for Profiles. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.RolePermissionConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.RolePermissions.RolePermission})">
+            <summary>
+            The database configuration for RolePermissions. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.SourceConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.Sources.Source})">
+            <summary>
+            The database configuration for Sources. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.SourceDocumentConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.SourceDocuments.SourceDocument})">
+            <summary>
+            The database configuration for SourceDocuments. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.ThreadConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.Threads.Thread})">
+            <summary>
+            The database configuration for Threads. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.UiLogsConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.UiLogs.UiLogs})">
+            <summary>
+            The database configuration for UiLogs. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.UserConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.Users.User})">
+            <summary>
+            The database configuration for Users. 
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Databases.EntityConfigurations.UserRoleConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{CX.Container.Server.Domain.Users.UserRole})">
+            <summary>
+            The database configuration for UserRoles. 
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Address.Line1">
+            <summary>
+            Address line 1 (e.g., street, PO Box, or company name).
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Address.Line2">
+            <summary>
+            Address line 2 (e.g., apartment, suite, unit, or building).
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Address.City">
+            <summary>
+            City, district, suburb, town, or village.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Address.State">
+            <summary>
+            State, county, province, or region.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Address.PostalCode">
+            <summary>
+            ZIP or postal code.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Address.Country">
+            <summary>
+            Two-letter country code <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">(ISO 3166-1 alpha-2)</a>.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Addresses.Dtos.AddressDto">
+            <summary>
+            Data Transfer Object exposing the properties of an Address.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressDto.Line1">
+            <summary>
+            Address Line 1, such as a house number and street name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressDto.Line2">
+            <summary>
+            Address Line 2, such as an apartment, suite, or office number.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressDto.City">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressDto.State">
+            <summary>
+            State or Province
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressDto.PostalCode">
+            <summary>
+            Postal or Zip Code
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressDto.Country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Addresses.Dtos.AddressForCreationDto">
+            <summary>
+            Data Transfer Object exposing the properties of an Address for Creation.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForCreationDto.Line1">
+            <summary>
+            Address Line 1
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForCreationDto.Line2">
+            <summary>
+            Address Line 2
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForCreationDto.City">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForCreationDto.State">
+            <summary>
+            State or Province
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForCreationDto.PostalCode">
+            <summary>
+            Postal Code or Zip Code
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForCreationDto.Country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Addresses.Dtos.AddressForUpdateDto">
+            <summary>
+            Data Transfer Object exposing the properties of an Address for Update.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForUpdateDto.Line1">
+            <summary>
+            Address Line 1
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForUpdateDto.Line2">
+            <summary>
+            Address Line 2
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForUpdateDto.City">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForUpdateDto.State">
+            <summary>
+            State or Province
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForUpdateDto.PostalCode">
+            <summary>
+            Postal Code or Zip Code
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Addresses.Dtos.AddressForUpdateDto.Country">
+            <summary>
+            Country
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityDto">
+            <summary>
+            Data Transfer Object exposing the properties of an Agricultural Activity.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityDto.Id">
+            <summary>
+            Unique Identifier
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityDto.AgriculturalActivityTypeId">
+            <summary>
+            Unique Identifier for the Type of Agricultural Activity
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityDto.Name">
+            <summary>
+            Description of the Agricultural Activity
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityDto.Scale">
+            <summary>
+            The scale of the Agricultural Activity
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForCreationDto">
+            <summary>
+            Data Transfer Object exposing the properties of an Agricultural Activity for Creation.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForCreationDto.AgriculturalActivityTypeId">
+            <summary>
+            Unique Identifier for the Type of Agricultural Activity
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForCreationDto.ProfileId">
+            <summary>
+            Unique Identifier for the Profile to which this Agricultural Activity belongs.
+            <remarks>
+            The profile can only be allocated on creation.
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForCreationDto.Name">
+            <summary>
+            Description of the Agricultural Activity
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForCreationDto.Scale">
+            <summary>
+            Scale of the Agricultural Activity
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForUpdateDto">
+            <summary>
+            Data Transfer Object exposing the properties of an Agricultural Activity for Update.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForUpdateDto.AgriculturalActivityTypeId">
+            <summary>
+            Unique Identifier for the Type of Agricultural Activity of this Activity.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForUpdateDto.Name">
+            <summary>
+            Description of the Agricultural Activity.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivities.Dtos.AgriculturalActivityForUpdateDto.Scale">
+            <summary>
+            Scale of the Agricultural Activity.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeDto">
+            <summary>
+            Data Transfer Object exposing the properties of an Agricultural Activity Type.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeDto.Id">
+            <summary>
+            Agricultural Activity Type Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeDto.Name">
+            <summary>
+            Description or Name of the Agricultural Activity Type.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeDto.Content">
+            <summary>
+            Detailed information about the Agricultural Activity Type.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeForCreationDto">
+            <summary>
+            Exposes the data transfer object for creating a new Agricultural Activity Type.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeForCreationDto.Name">
+            <summary>
+            Description or Name of the Agricultural Activity Type.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeForCreationDto.Content">
+            <summary>
+            Detailed information about the Agricultural Activity Type.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeForUpdateDto">
+            <summary>
+            Exposes the data transfer object for updating an existing Agricultural Activity Type.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeForUpdateDto.Name">
+            <summary>
+            Name or Description of the Type of Agricultural Activity.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.AgriculturalActivityTypes.Dtos.AgriculturalActivityTypeForUpdateDto.Content">
+            <summary>
+            Detailed information about the Type of Agricultural Activity.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.ContentTypes.ContentType">
+            <summary>
+            <para>Value Object representing the Content Type of a document or file.</para>
+            <para>The object is immutable.</para>
+            <para>
+            <list type="table">
+            <listheader><term>Valid Content Type Options</term><description>Description</description></listheader>
+            <item><term>PlainText</term><description>Plain Text Content</description></item>
+            <item><term>Markdown</term><description>Markdown Content</description></item>
+            <item><term>Html</term><description>HTML Content</description></item>
+            <item><term>Audio</term><description>Audio Content</description></item>
+            <item><term>Video</term><description>Video Content</description></item>
+            <item><term>Image</term><description>Image Content</description></item>
+            </list>
+            </para>
+            <para>These values are defined by <see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType.ContentTypeEnum"/>.</para>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.ContentTypes.ContentType.Value">
+            <summary>
+            Initializes and gets the value of the Content Type.
+            </summary>
+            <exception cref="T:CX.Container.Server.Exceptions.InvalidSmartEnumPropertyName">Thrown when the value is an invalid content type.</exception>
+        </member>
+        <member name="M:CX.Container.Server.Domain.ContentTypes.ContentType.Of(System.String)">
+            <summary>
+            Creates a new instance of the Content Type from the given string.
+            </summary>
+            <param name="value"></param>
+            <exception cref="T:CX.Container.Server.Exceptions.InvalidSmartEnumPropertyName">Thrown when the value is an invalid content type.</exception>
+            <returns></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.ContentTypes.ContentType.PlainText">
+            <summary>
+            Create PlainText Content Type.
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.ContentTypes.ContentType.Markdown">
+            <summary>
+            Create Markdown Content Type
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.ContentTypes.ContentType.Html">
+            <summary>
+            Create Html Content Type
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.ContentTypes.ContentType.Audio">
+            <summary>
+            Create Audio Content Type
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.ContentTypes.ContentType.Video">
+            <summary>
+            Create Video Content Type
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.ContentTypes.ContentType.Image">
+            <summary>
+            Create Image Content Type
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType"/></returns>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Countries.Dtos.CountryDto">
+            <summary>
+            Data Transfer Object exposing the properties of a Country.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Countries.Dtos.CountryDto.Id">
+            <summary>
+            Unique Identifier
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Countries.Dtos.CountryDto.CountryCode">
+            <summary>
+            Two-letter ISO 3166-1 alpha-2 country code
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Countries.Dtos.CountryDto.Name">
+            <summary>
+            Name of the Country
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Countries.Dtos.CountryForCreationDto">
+            <summary>
+            Data Transfer Object exposing the properties of a Country for Creation.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Countries.Dtos.CountryForCreationDto.CountryCode">
+            <summary>
+            Two-letter ISO 3166-1 alpha-2 country code
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Countries.Dtos.CountryForCreationDto.Name">
+            <summary>
+            Name of the Country
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Countries.Dtos.CountryForUpdateDto">
+            <summary>
+            Data Transfer Object exposing the properties of a Country for Update.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Countries.Dtos.CountryForUpdateDto.CountryCode">
+            <summary>
+            Two-letter ISO 3166-1 alpha-2 country code
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Countries.Dtos.CountryForUpdateDto.Name">
+            <summary>
+            Name of the Country
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Dashboards.Dtos.ClientSummaryDto">
+            <summary>
+            Data Transfer Object representing the client's summary.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Dashboards.Dtos.ProjectSummaryDto">
+            <summary>
+            Data Transfer Object representing a project's summary.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType">
+            <summary>
+            <para>Value Object representing the Source of a Document.</para>
+            <para>The object is immutable.</para>
+            <para>
+            <list type="table">
+            <listheader><term>Valid Document Source Type Values</term><description>Description</description></listheader>
+            <item><term>Blob</term><description>Document is located in Blob Storage.</description></item>
+            <item><term>Site</term><description>Document is located on a web-Site.</description></item>
+            </list>
+            </para>
+            <para>These values are defined by <see cref="T:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType.DocumentSourceTypeEnum"/>.</para>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType.Value">
+            <summary>
+            Value of the Value Object.
+            </summary>
+            <exception cref="T:CX.Container.Server.Exceptions.InvalidSmartEnumPropertyName">When attempting to create a DocumentSourceType that is not supported by the SmartEnum.</exception>
+        </member>
+        <member name="M:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType.Of(System.String)">
+            <summary>
+            Create a new instance of the DocumentSourceType from the given string.
+            </summary>
+            <param name="value">The value to assign to the new instance.</param>
+            <returns><see cref="T:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType.Blob">
+            <summary>
+            Factory Method for creating a new instance of the DocumentSourceType with the value of "Blob".
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType.Site">
+            <summary>
+            Factory Method for creating a new instance of the DocumentSourceType with the value of "Site".
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Emails.Email">
+            <summary>
+            Value Object representing an Email.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Emails.Email.Value">
+            <summary>
+            Email address as a string.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.FeedbackTypes.FeedbackType">
+            <summary>
+            <para>Value Object representing the type of Feedback a user can provide on a <see cref="T:CX.Container.Server.Domain.Messages.Message"/>.</para>
+            <para>The object is immutable.</para>
+            <para>
+            <list type="table">
+            <listheader><term>Valid Feedback Type Values</term><description>Description</description></listheader>
+            <item><term>None</term><description>No Feedback</description></item>
+            <item><term>Positive</term><description>Positive Feedback</description></item>
+            <item><term>Negative</term><description>Negative Feedback</description></item>
+            </list>
+            </para>
+            <para>These values are defined by <see cref="T:CX.Container.Server.Domain.FeedbackTypes.FeedbackType.FeedbackTypeEnum"/>.</para>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.FeedbackTypes.FeedbackType.Value">
+            <summary>
+            The value of the Feedback Type.
+            </summary>
+            <exception cref="T:CX.Container.Server.Exceptions.InvalidSmartEnumPropertyName">Thrown when attempting to assign a value not supported by <see cref="T:CX.Container.Server.Domain.FeedbackTypes.FeedbackType.FeedbackTypeEnum"/></exception>
+        </member>
+        <member name="M:CX.Container.Server.Domain.FeedbackTypes.FeedbackType.Of(System.String)">
+            <summary>
+            Create FeedbackType from the given string.
+            </summary>
+            <param name="value">The FeedbackType's value.</param>
+            <returns><see cref="F:CX.Container.Server.Domain.FeedbackTypes.FeedbackType._feedbackType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.FeedbackTypes.FeedbackType.None">
+            <summary>
+            Create a new instance of the FeedbackType with the value of "None".
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.FeedbackTypes.FeedbackType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.FeedbackTypes.FeedbackType.Positive">
+            <summary>
+            Create a new instance of the FeedbackType with the value of "Positive".
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.FeedbackTypes.FeedbackType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.FeedbackTypes.FeedbackType.Negative">
+            <summary>
+            Create a new instance of the FeedbackType with the value of "Negative".
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.FeedbackTypes.FeedbackType"/></returns>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Messages.Dtos.AelaResponseDto">
+            <summary>
+            Data Transfer Object wrapping the response from CX.Container AI's chat.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.AelaResponseDto.Message">
+            <summary>
+            The response message from CX.Container AI.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Messages.Dtos.ConversationDto">
+            <summary>
+            Data Transfer Object representing an entire conversation (including history) with the AI.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.ConversationDto.History">
+            <summary>
+            Previous messages sent to and received from the AI.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.ConversationDto.UserId">
+            <summary>
+            UserId of the user who initiated the conversation.
+            <remarks>
+            Currently using the ThreadId of the message as the UserId.
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.ConversationDto.Message">
+            <summary>
+            The message sent to the AI.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Messages.Dtos.MessageDto">
+            <summary>
+            Data Transfer Object representing a message sent to and received from the AI.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageDto.Id">
+            <summary>
+            Unique identifier for the message.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageDto.ThreadId">
+            <summary>
+            Unique identifier for the <see cref="T:System.Threading.Thread"/> to which this message belongs.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageDto.Content">
+            <summary>
+            The actual message content.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageDto.ContentType">
+            <summary>
+            The type of content in the message defined by <see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageDto.MessageType">
+            <summary>
+            The type of message to specify if the message was sent by the user or the AI. Values are defined by <see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageDto.Feedback">
+            <summary>
+            The type of feedback received on the message, if any. Values are defined by <see cref="T:CX.Container.Server.Domain.FeedbackTypes.FeedbackType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageDto.IsFlagged">
+            <summary>
+            Indicates if the message is flagged for review by a moderator.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageDto.IsPinned">
+            <summary>
+            Indicates if the message is pinned as a favourite by the user.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.Messages.Dtos.MessageDto.ForError(System.String)">
+            <summary>
+            Factory method to create a new instance of <see cref="T:CX.Container.Server.Domain.Messages.Dtos.MessageDto"/> containing an error message.
+            <remarks>Used by the <see cref="T:CX.Container.Server.Services.AiService"/> to return error messages to the client.</remarks>
+            </summary>
+            <param name="message">The message content.</param>
+            <returns><see cref="T:CX.Container.Server.Domain.Messages.Dtos.MessageDto"/></returns>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Messages.Dtos.MessageForChatDto">
+            <summary>
+            Data Transfer Object representing a message to be sent to the AI.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForChatDto.FromUser">
+            <summary>
+            When <c>true</c>, the message was sent by the user. When <c>false</c>, the message was the AI's response.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForChatDto.Message">
+            <summary>
+            The message content.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Messages.Dtos.MessageForCreationDto">
+            <summary>
+            Data Transfer Object representing a message for Creation.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForCreationDto.ThreadId">
+            <summary>
+            <see cref="T:System.Threading.Thread"/> this message belongs to.
+            <remarks>
+            When null, a new one will be created with the <see cref="P:System.Threading.Thread.Name"/> as the first 50 characters of the message.
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForCreationDto.Content">
+            <summary>
+            The actual message content.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForCreationDto.ContentType">
+            <summary>
+            The type of content in the message defined by <see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForCreationDto.MessageType">
+            <summary>
+            The type of message to specify if the message was sent by the user or the AI. Values are defined by <see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/>.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Messages.Dtos.MessageForUpdateDto">
+            <summary>
+            Message Data Transfer Object representing a message for Update.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForUpdateDto.Content">
+            <summary>
+            The actual message content.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForUpdateDto.ContentType">
+            <summary>
+            The type of content in the message defined by <see cref="T:CX.Container.Server.Domain.ContentTypes.ContentType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForUpdateDto.MessageType">
+            <summary>
+            The type of message to specify if the message was sent by the user or the AI. Values are defined by <see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForUpdateDto.Feedback">
+            <summary>
+            The type of feedback received on the message, if any. Values are defined by <see cref="T:CX.Container.Server.Domain.FeedbackTypes.FeedbackType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForUpdateDto.IsFlagged">
+            <summary>
+            Indicates if the message is flagged for review by a moderator.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Messages.Dtos.MessageForUpdateDto.IsPinned">
+            <summary>
+            Indicates if the message is pinned as a favourite by the user.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.MessageTypes.MessageType">
+            <summary>
+            <para>Value Object representing the Type or Origin of Message.</para>
+            <para>The object is immutable.</para>
+            <para>
+            <list type="table">
+            <listheader><term>Valid Message Type Options</term><description>Description</description></listheader>
+            <item><term>User</term><description>Message sent by the User.</description></item>
+            <item><term>System</term><description>Message sent by the Chat Bot.</description></item>
+            <item><term>Error</term><description>Error Message</description></item>
+            </list>
+            </para>
+            <para>These values are defined by <see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType.MessageTypeEnum"/>.</para>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.MessageTypes.MessageType.Value">
+            <summary>
+            Returns the value of the Message Type.
+            </summary>
+            <exception cref="T:CX.Container.Server.Exceptions.InvalidSmartEnumPropertyName">When attempting to assign an invalid value.</exception>
+        </member>
+        <member name="M:CX.Container.Server.Domain.MessageTypes.MessageType.Of(System.String)">
+            <summary>
+            Factory method to create a new instance of <see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/> from the given string.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.MessageTypes.MessageType.User">
+            <summary>
+            Factory method to create a new instance of <see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/> representing a User Message.
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.MessageTypes.MessageType.System">
+            <summary>
+            Factory method to create a new instance of <see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/> representing a System Message.
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.MessageTypes.MessageType.Error">
+            <summary>
+            Factory method to create a new instance of <see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/> representing an Error.
+            </summary>
+            <returns><see cref="T:CX.Container.Server.Domain.MessageTypes.MessageType"/></returns>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Nodes.Dtos.CategoryNodeDto">
+            <summary>
+            Data Transfer Object representing a Category Node and it's direct children.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.CategoryNodeDto.Id">
+            <summary>
+            Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.CategoryNodeDto.ProjectId">
+            <summary>
+            Unique Identifier linking to this Node's <see cref="T:CX.Container.Server.Domain.Projects.Project"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.CategoryNodeDto.ParentId">
+            <summary>
+            Unique Identifier linking to this Node's Parent Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.CategoryNodeDto.Name">
+            <summary>
+            Name of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.CategoryNodeDto.IsAsset">
+            <summary>
+            Indicates if this is an Asset and not a Category Node.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Nodes.Dtos.NodeDto">
+            <summary>
+            Data Transfer Object representing a Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.Id">
+            <summary>
+            Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.ProjectId">
+            <summary>
+            Unique Identifier linking to this Node's <see cref="T:CX.Container.Server.Domain.Projects.Project"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.ParentId">
+            <summary>
+            Unique Identifier linking to this Node's Parent Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.SourceId">
+            <summary>
+            Unique Identifier linking to this Node's Source.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.Name">
+            <summary>
+            Name of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.Description">
+            <summary>
+            Description of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.Author">
+            <summary>
+            Author of the Node's file.
+            </summary>    
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.Language">
+            <summary>
+            Language of the Node's file.
+            </summary>    
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.IsAsset">
+            <summary>
+            Indicates if this is an Asset and not a Category Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.Url">
+            <summary>
+            URI of the Node if it is a url.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.S3Key">
+            <summary>
+            S3Key of the Node if it is a file.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.FileName">
+            <summary>
+            Name of the file of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.DisplayName">
+            <summary>
+            Display name of the file of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.AgriRelevance">
+            <summary>
+            Score out of 10 for relevance to agriculture.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.Keywords">
+            <summary>
+            Keywords of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeDto.Tags">
+            <summary>
+            Tags of the Node.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto">
+            <summary>
+            Data Transfer Object representing a Node to be Created.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto.SourceId">
+            <summary>
+            Unique Identifier linking to this Node's Source.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto.ProjectId">
+            <summary>
+            Unique Identifier linking to this Node's <see cref="T:CX.Container.Server.Domain.Projects.Project"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto.ParentId">
+            <summary>
+            Unique Identifier linking to this Node's Parent Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto.Name">
+            <summary>
+            Name of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto.Description">
+            <summary>
+            Description of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto.IsAsset">
+            <summary>
+            Indicates if this is an Asset and not a Category Node.
+            </summary>    
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto.Keywords">
+            <summary>
+            Keywords of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForCreationDto.Tags">
+            <summary>
+            Tags of the Node.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Nodes.Dtos.NodeForFileImportDto">
+            <summary>
+            Data Transfer Object representing a Project Id and an File for importing.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForFileImportDto.ProjectId">
+            <summary>
+            Unique identifier
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForFileImportDto.File">
+            <summary>
+            Actual File.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Nodes.Dtos.NodeForFileUploadDto">
+            <summary>
+            Data Transfer Object representing a Node Asset.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForFileUploadDto.NodeId">
+            <summary>
+            Unique identifier specifying this Asset's <see cref="T:CX.Container.Server.Domain.Nodes.Node"/>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForFileUploadDto.File">
+            <summary>
+            Actual File.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto">
+            <summary>
+            Data Transfer Object representing a Node to be Updated.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.SourceId">
+            <summary>
+            Unique Identifier linking to this Node's Source.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.Name">
+            <summary>
+            Name of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.Description">
+            <summary>
+            Description of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.Author">
+            <summary>
+            Author of the Node's file.
+            </summary>    
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.Language">
+            <summary>
+            Language of the Node's file.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.Publication">
+            <summary>
+            Year of publication of the Node's file.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.AgriRelevance">
+            <summary>
+            Agriculture relevance score of the Node's file.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.IsAsset">
+            <summary>
+            Indicates if this is an Asset and not a Category Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.Keywords">
+            <summary>
+            Keywords of the Node.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateDto.Tags">
+            <summary>
+            Tags of the Node.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateParentDto">
+            <summary>
+            Data Transfer Object representing a Node's Parent Id to be Updated.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateParentDto.ParentId">
+            <summary>
+            Unique Identifier linking to this Node's Parent Node.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateS3Dto">
+            <summary>
+            Data Transfer Object representing a Node's S3 Key to be Updated.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateS3Dto.S3Key">
+            <summary>
+            S3Key of the Node if it is a file.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateS3Dto.FileName">
+            <summary>
+            File Name of the Node if it is a file.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Nodes.Dtos.NodeForUpdateS3Dto.DisplayName">
+            <summary>
+            Display Name of the Node if it is a file.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Preferences.Dtos.PreferenceDto">
+            <summary>
+            Data Transfer Object representing a user preference.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Preferences.Dtos.PreferenceDto.Id">
+            <summary>
+            Unique identifier for the preference.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Preferences.Dtos.PreferenceDto.Key">
+            <summary>
+            The key of the preference.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Preferences.Dtos.PreferenceDto.Value">
+            <summary>
+            The preference's value.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Preferences.Dtos.PreferenceForCreationDto">
+            <summary>
+            Data Transfer Object representing a user preference for Creation.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Preferences.Dtos.PreferenceForCreationDto.Key">
+            <summary>
+            The key of the preference.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Preferences.Dtos.PreferenceForCreationDto.Value">
+            <summary>
+            The preference's value.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Preferences.Dtos.PreferenceForUpdateDto">
+            <summary>
+            Data Transfer Object representing a user preference for Update.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Preferences.Dtos.PreferenceForUpdateDto.Key">
+            <summary>
+            Key of the preference.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Preferences.Dtos.PreferenceForUpdateDto.Value">
+            <summary>
+            Value of the preference.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto">
+            <summary>
+            Data Transfer Object representing a user profile.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.Id">
+            <summary>
+            Unique identifier for the profile.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.UserId">
+            <summary>
+            Unique identifier of the user this Profile belongs to.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.Name">
+            <summary>
+            Name of the User's Farm.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.AddressLine1">
+            <summary>
+            Address Line 1, containing data such as the street number and street name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.AddressLine2">
+            <summary>
+            Address Line 2, containing data such as the suburb.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.AddressLine3">
+            <summary>
+            Address Line 3, containing data such as the state.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.City">
+            <summary>
+            The City.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.PostalCode">
+            <summary>
+            The Postal or Zip code.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.LocationId">
+            <summary>
+            Location Id
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.Latitude">
+            <summary>
+            Latitude of location
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDto.Longitude">
+            <summary>
+            Longitude of location
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Profiles.Dtos.ProfileDtoV2">
+            <summary>
+            Data Transfer Object representing a user profile v2.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDtoV2.Id">
+            <summary>
+            Unique identifier for the profile.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDtoV2.UserId">
+            <summary>
+            Unique identifier of the user this Profile belongs to.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDtoV2.Name">
+            <summary>
+            Name of the User's Profile.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDtoV2.LocationId">
+            <summary>
+            Location Id
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDtoV2.Latitude">
+            <summary>
+            Latitude of location
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileDtoV2.Longitude">
+            <summary>
+            Longitude of location
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto">
+            <summary>
+            Data Transfer Object representing a user profile for Creation.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.UserId">
+            <summary>
+            Unique identifier for the user the profile belongs to.
+            <remarks>
+            The UserId is optional, if not provided the UserId will be set to the logged-in user's Id.
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.Name">
+            <summary>
+            Name of the User's Farm.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.AddressLine1">
+            <summary>
+            Address Line 1, containing data such as the street number and street name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.AddressLine2">
+            <summary>
+            Address Line 2, containing data such as the Suburb.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.AddressLine3">
+            <summary>
+            Address Line 3, containing data such as the State or Province.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.City">
+            <summary>
+            The City.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.PostalCode">
+            <summary>
+            The Postal or Zip code.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.LocationId">
+            <summary>
+            Location Id
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.Latitude">
+            <summary>
+            Latitude of location
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDto.Longitude">
+            <summary>
+            Longitude of location
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDtoV2">
+            <summary>
+            Data Transfer Object representing a user profile for Creation.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDtoV2.UserId">
+            <summary>
+            Unique identifier for the user the profile belongs to.
+            <remarks>
+            The UserId is optional, if not provided the UserId will be set to the logged-in user's Id.
+            </remarks>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDtoV2.Name">
+            <summary>
+            Name of the User's Location.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDtoV2.LocationId">
+            <summary>
+            Location Id
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDtoV2.Latitude">
+            <summary>
+            Latitude of location
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForCreationDtoV2.Longitude">
+            <summary>
+            Longitude of location
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto">
+            <summary>
+            Data Transfer Object representing a user profile for Update.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto.Name">
+            <summary>
+            The name of the user's farm.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto.AddressLine1">
+            <summary>
+            Address Line 1, containing data such as the street number and street name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto.AddressLine2">
+            <summary>
+            Address Line 2, containing data such as the suburb.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto.AddressLine3">
+            <summary>
+            Address Line 3, containing data such as the state.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto.City">
+            <summary>
+            The City.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto.PostalCode">
+            <summary>
+            The Postal or Zip code.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto.LocationId">
+            <summary>
+            Location Id
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto.Latitude">
+            <summary>
+            Latitude of location
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDto.Longitude">
+            <summary>
+            Longitude of location
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDtoV2">
+            <summary>
+            Data Transfer Object representing a user profile for Update.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDtoV2.Name">
+            <summary>
+            The name of the user's Profile.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDtoV2.LocationId">
+            <summary>
+            Location Id
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDtoV2.Latitude">
+            <summary>
+            Latitude of location
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Profiles.Dtos.ProfileForUpdateDtoV2.Longitude">
+            <summary>
+            Longitude of location
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Projects.Dtos.ProjectDto">
+            <summary>
+            Data Transfer Object representing a Project.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectDto.Id">
+            <summary>
+            Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectDto.Name">
+            <summary>
+            Name of the Project.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectDto.Description">
+            <summary>
+            Description of the Project.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectDto.Thumbnail">
+            <summary>
+            Thumbnail of the Project.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Projects.Dtos.ProjectForCreationDto">
+            <summary>
+            Data Transfer Object representing a Project to be Created.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectForCreationDto.Name">
+            <summary>
+            Name of the Project.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectForCreationDto.Description">
+            <summary>
+            Description of the Project.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectForCreationDto.Thumbnail">
+            <summary>
+            Thumbnail of the Project.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Projects.Dtos.ProjectForUpdateDto">
+            <summary>
+            Data Transfer Object representing a Project to be Updated.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectForUpdateDto.Name">
+            <summary>
+            New Name of the Project.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectForUpdateDto.Description">
+            <summary>
+            New Description of the Project.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Projects.Dtos.ProjectForUpdateDto.Thumbnail">
+            <summary>
+            New Thumbnail of the Project.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionDto">
+            <summary>
+            Data Transfer Object representing a Role-Permission.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionDto.Id">
+            <summary>
+            Unique identifier for the Role-Permission.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionDto.Role">
+            <summary>
+            The Role
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionDto.Permission">
+            <summary>
+            The Role's Permission.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionForCreationDto">
+            <summary>
+            Data Transfer Object representing a Role-Permission to be Created.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionForCreationDto.Role">
+            <summary>
+            The Role.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionForCreationDto.Permission">
+            <summary>
+            The Role's Permission.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionForUpdateDto">
+            <summary>
+            Data Transfer Object representing a Role-Permission to be Updated.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionForUpdateDto.Role">
+            <summary>
+            The Role.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.RolePermissions.Dtos.RolePermissionForUpdateDto.Permission">
+            <summary>
+            The Role's Permission.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Roles.RoleNames">
+            <summary>
+            Constants for the different Roles.
+            </summary>
+        </member>
+        <member name="F:CX.Container.Server.Domain.Roles.RoleNames.User">
+            <summary>
+            Normal System User.
+            </summary>
+        </member>
+        <member name="F:CX.Container.Server.Domain.Roles.RoleNames.SuperAdmin">
+            <summary>
+            Super User with Administrative privileges.
+            </summary>
+        </member>
+        <member name="F:CX.Container.Server.Domain.Roles.RoleNames.Restricted">
+            <summary>
+            User with no Roles, and as such no access to any resources.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Roles.Role">
+            <summary>
+            <para>Value Object representing a Role.</para>
+            <para>Values defined by <see cref="T:CX.Container.Server.Domain.Roles.RoleEnum"/></para>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Roles.Role.Value">
+            <summary>
+            The role's name.
+            </summary>
+            <exception cref="T:CX.Container.Server.Exceptions.InvalidSmartEnumPropertyName">When attempting to assign an unsupported <see cref="T:CX.Container.Server.Domain.Roles.RoleEnum"/> value.</exception>
+        </member>
+        <member name="M:CX.Container.Server.Domain.Roles.Role.Of(System.String)">
+            <summary>
+            Creates a new Role from a string value.
+            </summary>
+            <param name="value"><see cref="T:System.String"/> representing one of the <see cref="T:CX.Container.Server.Domain.Roles.RoleEnum"/>s</param>
+            <returns><see cref="T:CX.Container.Server.Domain.Roles.Role"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.Roles.Role.op_Implicit(CX.Container.Server.Domain.Roles.Role)~System.String">
+            <summary>
+            Implicitly converts a <see cref="T:CX.Container.Server.Domain.Roles.Role"/> to a <see cref="T:System.String"/>.
+            </summary>
+            <param name="value"><see cref="T:CX.Container.Server.Domain.Roles.Role"/> instance to convert.</param>
+            <returns><see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.Roles.Role.ListNames">
+            <summary>
+            List all <see cref="T:CX.Container.Server.Domain.Roles.Role"/>s as <see cref="T:System.String"/>s.
+            </summary>
+            <returns><see cref="T:System.Collections.Generic.List`1"/> of <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.Roles.Role.User">
+            <summary>
+            Normal user with access to threads and chats.
+            </summary>
+            <returns>User Role</returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.Roles.Role.SuperAdmin">
+            <summary>
+            Super user with administrative privileges that can access the admin panel.
+            </summary>
+            <returns>Super Admin Role</returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.Roles.Role.Restricted">
+            <summary>
+            Restricted user having no Roles, and as such no access to any resources.
+            <remarks>Mostly used for testing purposes.</remarks>
+            </summary>
+            <returns>Restricted Role</returns>
+        </member>
+        <member name="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus">
+            <summary>
+            <para>Value Object representing the Status of a <see cref="T:CX.Container.Server.Domain.SourceDocuments.SourceDocument"/>.</para>
+            <para>The object is immutable.</para>
+            <para>
+            <list type="table">
+            <listheader><term>Valid Statuses</term><description>Description</description></listheader>
+            <item><term>PublicBucket</term><description>Document was uploaded to the Public storage.</description></item>
+            <item><term>PrivateBucket</term><description>Document was moved to Private storage.</description></item>
+            <item><term>OCR</term><description>Document submitted for Optical Character Recognition.</description></item>
+            <item><term>Scraping</term><description>Document submitted for Web Scraping.</description></item>
+            <item><term>OCRDone</term><description>OCR has been completed.</description></item>
+            <item><term>Decorating</term><description>Text is being Decorated.</description></item>
+            <item><term>DecoratingDone</term><description>Decoration is complete.</description></item>
+            <item><term>Training</term><description>Document is being used to train the Chat-bot.</description></item>
+            <item><term>TrainingDone</term><description>Training is complete.</description></item>
+            <item><term>QueuedForRetrain</term><description>Perform retraining on the document.</description></item>
+            <item><term>Done</term><description>Document workflow has completed.</description></item>
+            <item><term>Error</term><description>Document workflow has Errors.</description></item>
+            </list>
+            </para>
+            <para>These values are defined by <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum"/>.</para>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.Value">
+            <summary>
+            Value of the Status.
+            </summary>
+            <exception cref="T:CX.Container.Server.Exceptions.InvalidSmartEnumPropertyName">When attempting to assign an invalid Document Status.</exception>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.Of(System.String)">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.PublicBucket">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.PublicBucket"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.PrivateBucket">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.PrivateBucket"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.OCR">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.OCR"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.Scraping">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.Scraping"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.OCRDone">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.OCRDone"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.Decorating">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.Decorating"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.DecoratingDone">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.DecoratingDone"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.Training">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.Training"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.TrainingDone">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.TrainingDone"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.QueuedForRetrain">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.QueuedForRetrain"/>.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.Done">
+            <summary>
+            Factory method for creating a <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/> object with a value of <see cref="F:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus.SourceDocumentStatusEnum.Done"/>.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto">
+            <summary>
+            Data Transfer Object representing a Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.Id">
+            <summary>
+            Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.SourceId">
+            <summary>
+            Unique identifier specifying this Document's <see cref="T:CX.Container.Server.Domain.Sources.Source"/>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.NodeId">
+            <summary>
+            Unique identifier specifying this Document's <see cref="T:CX.Container.Server.Domain.Nodes.Node"/>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.Name">
+            <summary>
+            Name of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.DisplayName">
+            <summary>
+            Display Name of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.Description">
+            <summary>
+            Description of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.Tags">
+            <summary>
+            Tags associated with the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.Language">
+            <summary>
+            Language of the text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.DocumentSourceType">
+            <summary>
+            The Source of the Document. Values defined by <see cref="T:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.Url">
+            <summary>
+            URI of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.IsTrained">
+            <summary>
+            Indicates whether the Document has been trained.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.Status">
+            <summary>
+            Status of the Document. Values defined by <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.ErrorText">
+            <summary>
+            When the state is error this will contain the error text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.OCRText">
+            <summary>
+            Text that was extracted from an Image.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.OCRTaskID">
+            <summary>
+            Unique identifier of the task that extracted the OCR Text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.DecoratorText">
+            <summary>
+            The decorated text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.DecoratorTaskID">
+            <summary>
+            Unique identifier of the task that decorated the text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.TrainTaskID">
+            <summary>
+            Unique identifier of the task that trained the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentDto.DateTrained">
+            <summary>
+            Date and Time at which this document was processed for training.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto">
+            <summary>
+            Data Transfer Object representing a Document to be Created.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto.SourceId">
+            <summary>
+            Unique Identifier linking to this Document's <see cref="T:CX.Container.Server.Domain.Sources.Source"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto.NodeId">
+            <summary>
+            Unique Identifier linking to this Document's <see cref="T:CX.Container.Server.Domain.Nodes.Node"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto.Name">
+            <summary>
+            Name of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto.DisplayName">
+            <summary>
+            Display Name of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto.Tags">
+            <summary>
+            Tags associated with the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto.Language">
+            <summary>
+            Language of the text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto.Description">
+            <summary>
+            Description of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto.DocumentSourceType">
+            <summary>
+            The Source of the Document. Values defined by <see cref="T:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForCreationDto.Url">
+            <summary>
+            URI of the Document.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForFileUploadDto">
+            <summary>
+            Data Transfer Object representing a Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForFileUploadDto.SourceId">
+            <summary>
+            Unique identifier specifying this Document's <see cref="T:CX.Container.Server.Domain.Sources.Source"/>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForFileUploadDto.NodeId">
+            <summary>
+            Unique identifier specifying this Document's <see cref="T:CX.Container.Server.Domain.Nodes.Node"/>
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForFileUploadDto.Id">
+            <summary>
+            Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForFileUploadDto.DisplayName">
+            <summary>
+            Dispaly Name of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForFileUploadDto.Description">
+            <summary>
+            Description of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForFileUploadDto.File">
+            <summary>
+            Actual File.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto">
+            <summary>
+            Data Transfer Object representing a Document to be Updated.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.SourceId">
+            <summary>
+            Unique Identifier linking to this Document's <see cref="T:CX.Container.Server.Domain.Sources.Source"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.NodeId">
+            <summary>
+            Unique Identifier linking to this Document's <see cref="T:CX.Container.Server.Domain.Nodes.Node"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.Name">
+            <summary>
+            Name of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.DisplayName">
+            <summary>
+            Display Name of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.Tags">
+            <summary>
+            Tags associated with the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.Language">
+            <summary>
+            Language of the text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.Description">
+            <summary>
+            Description of the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.DocumentSourceType">
+            <summary>
+            Source of the Document. Values defined by <see cref="T:CX.Container.Server.Domain.DocumentSourceTypes.DocumentSourceType"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.Url">
+            <summary>
+            URI of the Document's location.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.Status">
+            <summary>
+            Status of the Document. Values defined by <see cref="T:CX.Container.Server.Domain.SourceDocumentStatus.SourceDocumentStatus"/>.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.ErrorText">
+            <summary>
+            When the state is error this will contain the error text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.OCRTaskID">
+            <summary>
+            Task ID of the Task that extracted text from an Image.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.OCRText">
+            <summary>
+            Text that was extracted from an Image.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.DecoratorText">
+            <summary>
+            Decorated text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.DecoratorTaskID">
+            <summary>
+            Task ID of the Task that decorated the text.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.TrainingTaskID">
+            <summary>
+            Task ID of the Task that trained the Document.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.SourceDocuments.Dtos.SourceDocumentForUpdateDto.DateTrained">
+            <summary>
+            Date the Document was trained.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Sources.Dtos.SourceDto">
+            <summary>
+            Data Transfer Object representing a Document Source.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Sources.Dtos.SourceDto.Id">
+            <summary>
+            Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Sources.Dtos.SourceDto.Name">
+            <summary>
+            Name of the Source.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Sources.Dtos.SourceDto.Description">
+            <summary>
+            Description of the Source.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Sources.Dtos.SourceDto.SourceDocumentCount">
+            <summary>
+            Number of Source Documents.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Sources.Dtos.SourceForCreationDto">
+            <summary>
+            Data Transfer Object representing a Document Source to be Created.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Sources.Dtos.SourceForCreationDto.Name">
+            <summary>
+            Name of the Source.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Sources.Dtos.SourceForCreationDto.Description">
+            <summary>
+            Description of the Source.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Sources.Dtos.SourceForUpdateDto">
+            <summary>
+            Data Transfer Object representing a Document Source to be Updated.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Sources.Dtos.SourceForUpdateDto.Name">
+            <summary>
+            New Name of the Source.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Sources.Dtos.SourceForUpdateDto.Description">
+            <summary>
+            New Description of the Source.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Threads.Dtos.ThreadDto">
+            <summary>
+            Data Transfer Object representing a conversation/chat Thread.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Threads.Dtos.ThreadDto.Id">
+            <summary>
+            Thread's Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Threads.Dtos.ThreadDto.Name">
+            <summary>
+            Name of the Thread.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Threads.Dtos.ThreadDto.HasPinnedMessages">
+            <summary>
+            <c>true</c> if the Thread has Pinned messages, <c>false</c> otherwise.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Threads.Dtos.ThreadDto.LastModifiedOn">
+            <summary>
+            Last Modified Timestamp.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Threads.Dtos.ThreadForCreationDto">
+            <summary>
+            Data Transfer Object representing a conversation/chat Thread to be Created.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Threads.Dtos.ThreadForCreationDto.Name">
+            <summary>
+            Name of the Thread.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Threads.Dtos.ThreadForUpdateDto">
+            <summary>
+            Data Transfer Object representing a conversation/chat Thread to be Updated.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Threads.Dtos.ThreadForUpdateDto.Name">
+            <summary>
+            New Name of the Thread.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Users.Dtos.UserDto">
+            <summary>
+            Data Transfer Object representing a User.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserDto.Id">
+            <summary>
+            User's Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserDto.FirstName">
+            <summary>
+            User's First Name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserDto.LastName">
+            <summary>
+            User's Last Name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserDto.Email">
+            <summary>
+            User's Email Address.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserDto.Username">
+            <summary>
+            User's Username.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Users.Dtos.UserForCreationDto">
+            <summary>
+            Data Transfer Object representing a User to be Created.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserForCreationDto.Id">
+            <summary>
+            User's Unique Identifier.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserForCreationDto.FirstName">
+            <summary>
+            User's First Name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserForCreationDto.LastName">
+            <summary>
+            User's Last Name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserForCreationDto.Email">
+            <summary>
+            Users's Email Address.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserForCreationDto.Username">
+            <summary>
+            User's Username.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Domain.Users.Dtos.UserForUpdateDto">
+            <summary>
+            Data Transfer Object representing a User to be Updated.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserForUpdateDto.FirstName">
+            <summary>
+            User's updated First Name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserForUpdateDto.LastName">
+            <summary>
+            User's updated Last Name.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserForUpdateDto.Email">
+            <summary>
+            User's updated Email Address.
+            </summary>
+        </member>
+        <member name="P:CX.Container.Server.Domain.Users.Dtos.UserForUpdateDto.Username">
+            <summary>
+            User's updated Username.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Extensions.Application.StringExtensions.IsNullOrWhitespace(System.String)">
+            <summary>
+            Checks if a string has no value.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Extensions.Application.StringExtensions.IsNotNullOrWhiteSpace(System.String)">
+            <summary>
+            Checks if a string has a value.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Extensions.Application.StringExtensions.Coalesce(System.String,System.String[])">
+            <summary>
+            Returns the first non-null or non-empty string from the given values.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Extensions.Application.StringExtensions.EmptyToNull(System.String)">
+            <summary>
+            Returns null if the string is empty or whitespace.
+            </summary>
+        </member>
+        <member name="M:CX.Container.Server.Extensions.Services.WebAppServiceConfiguration.AddBoundaryServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly[])">
+            <summary>
+            Registers all services in the assembly of the given interface.
+            </summary>
+        </member>
+        <member name="T:CX.Container.Server.Migrations.Initial">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.Initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.Initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.Initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.SeedUserData">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.SeedUserData.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.SeedUserData.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.SeedUserData.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.MigrateUserIdToString">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.MigrateUserIdToString.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.MigrateUserIdToString.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.MigrateUserIdToString.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddSourceDocumentStatus">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddSourceDocumentStatus.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddSourceDocumentStatus.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddSourceDocumentStatus.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddFieldsToSourceDocument">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddFieldsToSourceDocument.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddFieldsToSourceDocument.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddFieldsToSourceDocument.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddTaskIdsToSourceDocument">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddTaskIdsToSourceDocument.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddTaskIdsToSourceDocument.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddTaskIdsToSourceDocument.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.DropAccountTable">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.DropAccountTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.DropAccountTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.DropAccountTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.CreateThreadAndMessageIndexes">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.CreateThreadAndMessageIndexes.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.CreateThreadAndMessageIndexes.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.CreateThreadAndMessageIndexes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.MigrateToDotNet8">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.MigrateToDotNet8.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.MigrateToDotNet8.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.MigrateToDotNet8.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddFieldsForDocumentProcessing">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddFieldsForDocumentProcessing.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddFieldsForDocumentProcessing.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddFieldsForDocumentProcessing.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddColumnMessageIsFlagged">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddColumnMessageIsFlagged.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddColumnMessageIsFlagged.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddColumnMessageIsFlagged.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddTrainingId">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddTrainingId.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddTrainingId.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddTrainingId.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.DropColumnThreadMessageLimit">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.DropColumnThreadMessageLimit.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.DropColumnThreadMessageLimit.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.DropColumnThreadMessageLimit.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddedLoggingDatabase">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddedLoggingDatabase.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddedLoggingDatabase.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddedLoggingDatabase.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.ErrorTextToSourceDocument">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.ErrorTextToSourceDocument.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.ErrorTextToSourceDocument.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.ErrorTextToSourceDocument.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.UserCascadeDeletions">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.UserCascadeDeletions.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.UserCascadeDeletions.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.UserCascadeDeletions.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddMessageIsPinnedColumn">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddMessageIsPinnedColumn.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddMessageIsPinnedColumn.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddMessageIsPinnedColumn.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.CreateProjectEntity">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.CreateProjectEntity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.CreateProjectEntity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.CreateProjectEntity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddDiaplayName">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddDiaplayName.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddDiaplayName.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddDiaplayName.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.CreateNodeEnitty">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.CreateNodeEnitty.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.CreateNodeEnitty.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.CreateNodeEnitty.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.SourcesDocumentCount">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.SourcesDocumentCount.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.SourcesDocumentCount.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.SourcesDocumentCount.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.NodeS3KeyFieldAdded">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.NodeS3KeyFieldAdded.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.NodeS3KeyFieldAdded.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.NodeS3KeyFieldAdded.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddSourceIdToNode">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddSourceIdToNode.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddSourceIdToNode.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddSourceIdToNode.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddThumbnailFieldForProject">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddThumbnailFieldForProject.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddThumbnailFieldForProject.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddThumbnailFieldForProject.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddNodeIdToSourceDocuments">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddNodeIdToSourceDocuments.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddNodeIdToSourceDocuments.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddNodeIdToSourceDocuments.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.NodeUpdates">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.NodeUpdates.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.NodeUpdates.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.NodeUpdates.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddProfileV2Properties">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddProfileV2Properties.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddProfileV2Properties.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddProfileV2Properties.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddedLanguageToNode">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddedLanguageToNode.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddedLanguageToNode.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddedLanguageToNode.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddFileNameToNode">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddFileNameToNode.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddFileNameToNode.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddFileNameToNode.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddAgriRlevanceToNode">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddAgriRlevanceToNode.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddAgriRlevanceToNode.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddAgriRlevanceToNode.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddAuthorToNode">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddAuthorToNode.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddAuthorToNode.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddAuthorToNode.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AgriRelevanceNullable">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AgriRelevanceNullable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AgriRelevanceNullable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AgriRelevanceNullable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddPublicationToNode">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddPublicationToNode.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddPublicationToNode.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddPublicationToNode.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.LimitCharactersOnNodes">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.LimitCharactersOnNodes.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.LimitCharactersOnNodes.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.LimitCharactersOnNodes.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.RemoveFarmFromLocation">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.RemoveFarmFromLocation.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.RemoveFarmFromLocation.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.RemoveFarmFromLocation.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.RemoveLocationJustName">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.RemoveLocationJustName.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.RemoveLocationJustName.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.RemoveLocationJustName.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CX.Container.Server.Migrations.AddDisplayNameToNode">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddDisplayNameToNode.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddDisplayNameToNode.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CX.Container.Server.Migrations.AddDisplayNameToNode.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

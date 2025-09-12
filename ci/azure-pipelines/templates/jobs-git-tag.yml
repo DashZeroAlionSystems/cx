@@ -1,0 +1,37 @@
+parameters:
+  Pool: 'Azure Pipelines'
+  checkout: dashboard-server
+  
+jobs:
+- job: GitTag
+  pool: ${{ parameters.Pool }}
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
+  steps:
+    - checkout: ${{ parameters.checkout }}
+      displayName: Checkout
+      fetchDepth: '0'
+      persistCredentials: true
+
+    - script: |
+        git config --global user.email "shaun.havelaar@cohesionx.co.za"
+        git config --global user.name "Shaun Havelaar"
+        
+        # Get the current build number
+        currentVersion="$(Build.BuildNumber)"
+        
+        # Increment the patch version
+        IFS='.' read -r major minor patch <<< "$currentVersion"
+        newMinor=$((minor + 1))
+        newVersion="$major.$newMinor.0-alpha"
+        
+        # Echo the variables for verification
+        echo "Current version: $currentVersion"
+        echo "New patch version: $newPatch"
+        echo "New version: $newVersion"
+        
+        # Tag the commit with the new version
+        git tag "$newVersion"
+        
+        # Push the tag to the remote repository, specifically to the development branch
+        git push origin HEAD:development "$newVersion"
+      displayName: 'Increment Version and Tag'

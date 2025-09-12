@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "call-analyzer-collection",
+		"name": "Call Analyzer API Collection",
+		"description": "API collection for audio call analysis and processing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Call Analyzer",
+			"item": [
+				{
+					"name": "Analyze Audio Call",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text",
+								"description": "Bearer token for authentication"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "Audio file to analyze (WAV, MP3, OGG, M4A)"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/call-analyzer/{{analyzer_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"call-analyzer",
+								"{{analyzer_id}}"
+							]
+						},
+						"description": "Analyzes audio call files using a specific call analyzer. Supports WAV, MP3, OGG, and M4A audio formats. Requires an analyzer ID parameter."
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/call-analyzer/sample-analyzer",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"call-analyzer",
+										"sample-analyzer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"analysisResults\": {\n        \"sentiment\": \"positive\",\n        \"keywords\": [\"customer\", \"service\", \"satisfaction\"],\n        \"duration\": 180,\n        \"transcription\": \"Hello, how can I help you today?\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Audio call analysis and processing"
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://localhost:7001",
+			"description": "Base URL for the CX Container API (update with your actual server URL)"
+		},
+		{
+			"key": "access_token",
+			"value": "your-bearer-token-here",
+			"description": "Authentication bearer token"
+		},
+		{
+			"key": "analyzer_id",
+			"value": "default-analyzer",
+			"description": "Call analyzer ID to use for audio analysis"
+		}
+	]
+} 

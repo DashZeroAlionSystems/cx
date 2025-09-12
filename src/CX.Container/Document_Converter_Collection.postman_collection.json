@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "document-converter-collection",
+		"name": "Document Converter API Collection",
+		"description": "API collection for document format conversion services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Document Converter",
+			"item": [
+				{
+					"name": "Convert DOCX to PDF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token}}",
+								"type": "text",
+								"description": "Bearer token for authentication"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": [],
+									"description": "DOCX file to convert to PDF"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/DocXToPDF/convert",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"DocXToPDF",
+								"convert"
+							]
+						},
+						"description": "Converts Microsoft Word DOCX files to PDF format while maintaining document formatting and layout."
+					},
+					"response": [
+						{
+							"name": "Success Response (PDF File)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/DocXToPDF/convert",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"DocXToPDF",
+										"convert"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/pdf"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment; filename=\"document.pdf\""
+								}
+							],
+							"cookie": [],
+							"body": "[PDF Binary Content]"
+						}
+					]
+				}
+			],
+			"description": "Document format conversion services"
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://localhost:7001",
+			"description": "Base URL for the CX Container API (update with your actual server URL)"
+		},
+		{
+			"key": "access_token",
+			"value": "your-bearer-token-here",
+			"description": "Authentication bearer token"
+		}
+	]
+} 

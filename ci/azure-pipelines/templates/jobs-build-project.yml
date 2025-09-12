@@ -1,0 +1,68 @@
+parameters:
+  Job:
+    Name: ''
+    DependsOn: ''
+    Condition: succeeded()
+  Pool: 'Azure Pipelines'
+  JobContainer:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    env:
+      MONGO_URL: "mongodb://mongo"
+  ProjPath: ''
+  TestProjects: ''
+  Services: {}
+  NugetPackages: ''
+  BuildConfiguration: 'release'
+
+jobs:
+  - job: ${{ parameters.Job.Name }}
+    displayName: 'Build ${{ parameters.ProjPath }}'
+    dependsOn: ${{ parameters.Job.DependsOn }}
+    condition: ${{ parameters.Job.Condition }}
+    variables:
+      ProjPath: ${{ parameters.ProjPath }}
+      TestProjects: |-
+        ${{ parameters.TestProjects }}
+      NugetPackages: |-
+        ${{ parameters.NugetPackages }}
+      BuildConfiguration: ${{ parameters.BuildConfiguration }}
+    pool: ${{ parameters.Pool }}
+    container: ${{ parameters.JobContainer }}
+    services: ${{ parameters.Services }}
+    steps:
+      - checkout: self
+        clean: true
+        fetchDepth: 1
+        fetchTags: false
+      - task: NuGetAuthenticate@1
+        displayName: 'NuGet Authenticate'
+      - task: DotNetCoreCLI@2
+        displayName: Build
+        inputs:
+          command: build
+          projects: '$(ProjPath)/*.csproj'
+          arguments: '--configuration $(BuildConfiguration)'
+          workingDirectory: '$(ProjPath)'
+      - ${{ if ne(parameters.TestProjects, '') }}:
+          - task: DotNetCoreCLI@2
+            displayName: Test
+            inputs:
+              command: test
+              projects: '$(TestProjects)'
+              arguments: '--configuration $(BuildConfiguration)'
+              workingDirectory: '$(ProjPath)'
+      - ${{ if ne(parameters.NugetPackages, '') }}:
+          - task: CopyFiles@2
+            displayName: 'Copy files to nuget artifact staging directory'
+            inputs:
+              SourceFolder: ''
+              Contents: |
+                $(NugetPackages)
+              TargetFolder: '$(build.ArtifactStagingDirectory)/nuget'
+              CleanTargetFolder: true
+              flattenFolders: true
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish Artifact: nuget'
+            inputs:
+              PathtoPublish: '$(build.ArtifactStagingDirectory)/nuget'
+              ArtifactName: nuget
