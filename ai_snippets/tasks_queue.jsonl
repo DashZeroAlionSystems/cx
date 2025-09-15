@@ -1,0 +1,4 @@
+{"id":"batch-2-bash","type":"snippet","priority":1,"status":"pending","assignee":null,"inputs":{"prompt":"Create robust Bash script template with strict mode and traps"},"outputs":[],"notes":""}
+{"id":"batch-3-fastapi","type":"snippet","priority":2,"status":"pending","assignee":null,"inputs":{"prompt":"FastAPI service with Pydantic DTOs and repository pattern"},"outputs":[],"notes":""}
+{"id":"batch-4-terraform","type":"snippet","priority":3,"status":"pending","assignee":null,"inputs":{"prompt":"Terraform module with variables, outputs, and example usage"},"outputs":[],"notes":""}
+{"id":"validate-metadata","type":"metadata","priority":1,"status":"pending","assignee":null,"inputs":{"prompt":"Validate metadata.jsonl entries and add missing fields"},"outputs":[],"notes":""}
