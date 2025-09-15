@@ -1,0 +1,11 @@
+-- CX: Users table matching C# model
+BEGIN;
+
+CREATE TABLE IF NOT EXISTS cx_users (
+	id INTEGER PRIMARY KEY,
+	email TEXT NOT NULL UNIQUE,
+	is_active BOOLEAN NOT NULL DEFAULT TRUE,
+	created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+COMMIT;

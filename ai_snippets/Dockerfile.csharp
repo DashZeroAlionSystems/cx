@@ -1,0 +1,17 @@
+# syntax=docker/dockerfile:1
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY snippets/csharp_aspnet_cx_api.cs Program.cs
+RUN dotnet new web -n CxApi -o app --force
+WORKDIR /src/app
+# Replace generated Program.cs with our snippet placed at root as Program.cs
+COPY --from=build /src/Program.cs ./Program.cs
+RUN dotnet add package Npgsql --version 8.0.3
+RUN dotnet build -c Release
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+WORKDIR /app
+COPY --from=build /src/app/bin/Release/net8.0/ ./
+EXPOSE 8080
+ENV ASPNETCORE_URLS=http://0.0.0.0:8080
+ENTRYPOINT ["dotnet", "app.dll"]
