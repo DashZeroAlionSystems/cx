@@ -20,6 +20,25 @@
 - Add Batch 4: Terraform reusable module (variables/outputs)
 - Add Batch 5: Kafka consumer with clean offset handling
 
+### Codebase Coverage (1250+ files mapped)
+- **CX Container Server**: 1220+ C# files (DDD, CQRS, Clean Architecture)
+- **Python Utilities**: 11 files (document processing, format conversion)
+- **React Workflow Builder**: 5 files (workflow engine, UI components)
+- **Database Schemas**: 7 files (migrations, multi-tenant schemas)
+- **Infrastructure**: 18+ files (CI/CD, Kubernetes, Docker)
+
+### Extraction Queue (10 high-priority tasks)
+1. DDD Entity pattern (Project.cs)
+2. Domain Event pattern (MessageCreated.cs)
+3. Repository pattern (ProjectRepository.cs)
+4. CQRS Command (AddProject.cs)
+5. API Controller (ProjectsController.cs)
+6. Document processor (docxtotext.py)
+7. Workflow engine (core.js)
+8. DTO Mapper (ProjectMapper.cs)
+9. CI/CD Pipeline (Azure Pipelines)
+10. Helm Chart (Kubernetes)
+
 ### Voice Command Targets
 - "create repo/service layer in <lang>"
 - "generate DTO with validation"
