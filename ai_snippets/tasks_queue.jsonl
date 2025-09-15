@@ -2,3 +2,7 @@
 {"id":"batch-3-fastapi","type":"snippet","priority":2,"status":"pending","assignee":null,"inputs":{"prompt":"FastAPI service with Pydantic DTOs and repository pattern"},"outputs":[],"notes":""}
 {"id":"batch-4-terraform","type":"snippet","priority":3,"status":"pending","assignee":null,"inputs":{"prompt":"Terraform module with variables, outputs, and example usage"},"outputs":[],"notes":""}
 {"id":"validate-metadata","type":"metadata","priority":1,"status":"pending","assignee":null,"inputs":{"prompt":"Validate metadata.jsonl entries and add missing fields"},"outputs":[],"notes":""}
+{"id":"batch-2-bash-continue","type":"snippet","priority":1,"status":"pending","assignee":null,"inputs":{"prompt":"Follow-up: continue work for batch-2-bash"},"outputs":[],"notes":"auto-generated follow-up based on ready-to-open state"}
+{"id":"batch-3-fastapi-continue","type":"snippet","priority":2,"status":"pending","assignee":null,"inputs":{"prompt":"Follow-up: continue work for batch-3-fastapi"},"outputs":[],"notes":"auto-generated follow-up based on ready-to-open state"}
+{"id":"batch-4-terraform-continue","type":"snippet","priority":3,"status":"pending","assignee":null,"inputs":{"prompt":"Follow-up: continue work for batch-4-terraform"},"outputs":[],"notes":"auto-generated follow-up based on ready-to-open state"}
+{"id":"validate-metadata-continue","type":"metadata","priority":1,"status":"pending","assignee":null,"inputs":{"prompt":"Follow-up: continue work for validate-metadata"},"outputs":[],"notes":"auto-generated follow-up based on ready-to-open state"}
