@@ -85,3 +85,43 @@ async def update_task(task_id: str, body: UpdateRequest):
 			write_tasks(tasks)
 			return updated
 	raise HTTPException(404, detail="Task not found")
+
+
+class FollowUpResponse(BaseModel):
+	created: bool
+	task: Task
+
+
+@app.post("/tasks/{task_id}/followup", response_model=FollowUpResponse)
+async def create_followup(task_id: str):
+	tasks = read_tasks()
+	original = None
+	for t in tasks:
+		if t.id == task_id:
+			original = t
+			break
+	if original is None:
+		raise HTTPException(404, detail="Task not found")
+
+	# Define ready-to-open semantics
+	if original.status not in ("pending", "review"):
+		raise HTTPException(409, detail="Task not ready to open")
+
+	followup_id = f"{original.id}-continue"
+	for t in tasks:
+		if t.id == followup_id:
+			return FollowUpResponse(created=False, task=t)
+
+	followup = Task(
+		id=followup_id,
+		type=original.type,
+		priority=max(1, original.priority),
+		status="pending",
+		assignee=None,
+		inputs={"prompt": f"Follow-up: continue work for {original.id}"},
+		outputs=[],
+		notes="auto-generated follow-up based on ready-to-open state"
+	)
+	tasks.append(followup)
+	write_tasks(tasks)
+	return FollowUpResponse(created=True, task=followup)

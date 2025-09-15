@@ -39,6 +39,12 @@ Coordinate background agents to continuously expand the snippet library and meta
 - GET `/tasks?status=pending&type=snippet` → List tasks (filterable)
 - POST `/tasks/{id}/claim` { assignee } → Claim a task (sets in_progress)
 - PATCH `/tasks/{id}` { status, outputs, notes, assignee } → Update any fields
+- POST `/tasks/{id}/followup` → If the task is `pending` or `review`, create or return `{id}-continue` as a new `pending` task.
+
+Example:
+```bash
+curl -X POST 'http://localhost:8000/tasks/batch-2-bash/followup'
+```
 
 ### Quickstart
 - Start everything including API: `ai_snippets/scripts/start.sh`
