@@ -1,0 +1,113 @@
+parameters:
+  Job:
+    Name: ''
+    DependsOn: ''
+    Condition: succeeded()
+  Pool: 'Azure Pipelines'
+  Version: ''
+  jobContainer:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    env: 
+     MONGO_URL: "mongodb://mongo"
+     POSTGRESQL_HOST: "postgres:5432"
+     REDIS_URL: "redis:6379"
+  ProjPath: ''
+  TestProjects: ''
+  DockerImg: ''
+  NugetPackages: ''
+  Services: {}
+  BuildConfiguration: 'release'
+  skipConfigOutputTest: false
+  skipChartsOutputTest: false
+
+jobs:
+- job: ${{ parameters.Job.name }}
+  displayName: 'Build ${{ parameters.ProjPath }}'
+  dependsOn: ${{ parameters.Job.DependsOn }}
+  condition: ${{ parameters.Job.Condition }}
+  variables:
+    ProjPath: ${{ parameters.ProjPath }}
+    TestProjects: |-
+      ${{ parameters.TestProjects }}
+    NugetPackages: |-
+      ${{ parameters.NugetPackages }}
+    BuildConfiguration: ${{ parameters.BuildConfiguration }}
+    skipConfigOutputTest: ${{ parameters.skipConfigOutputTest }}
+    skipChartsOutputTest: ${{ parameters.skipChartsOutputTest }}
+    LANG: en_ZA.UTF-8
+  pool: ${{ parameters.Pool }}
+  container: ${{ parameters.JobContainer }}
+  services: ${{ parameters.Services }}
+  steps:
+    - checkout: self
+      clean: true
+      fetchDepth: 1
+      fetchTags: false
+
+    - script: |
+        echo "Current version used for the build: ${{ parameters.Version }}"
+      displayName: Build version
+    
+    - task: NuGetAuthenticate@1
+      displayName: 'NuGet Authenticate'
+    - task: DotNetCoreCLI@2
+      displayName: Build
+      inputs:
+        command: build
+        projects: '$(ProjPath)/*.csproj'
+        arguments: '--configuration $(BuildConfiguration)'
+        workingDirectory: '$(ProjPath)'
+    - ${{ if ne(parameters.TestProjects, '') }}:
+      - task: DotNetCoreCLI@2
+        displayName: Test
+        inputs:
+          command: test
+          projects: '$(TestProjects)'
+          arguments: '--configuration $(BuildConfiguration)'
+          workingDirectory: '$(ProjPath)'
+    - ${{ if ne(parameters.NugetPackages, '') }}:
+      - task: CopyFiles@2
+        displayName: 'Copy files to nuget artifact staging directory'
+        inputs:
+          SourceFolder: ''
+          Contents: | 
+            $(NugetPackages)
+          TargetFolder: '$(build.ArtifactStagingDirectory)/nuget'
+          CleanTargetFolder: true
+          flattenFolders: true
+      - task: PublishBuildArtifacts@1
+        displayName: 'Publish Artifact: nuget'
+        inputs:
+          PathtoPublish: '$(build.ArtifactStagingDirectory)/nuget'
+          ArtifactName: nuget
+    - ${{ if ne(parameters.DockerImg, '') }}:
+      - task: DotNetCoreCLI@2
+        displayName: Publish project for docker build
+        inputs:        
+          command: publish
+          publishWebProjects: false
+          projects: '$(ProjPath)/*.csproj'
+          arguments: '--configuration $(BuildConfiguration) --output obj/Docker/publish --os linux'
+          zipAfterPublish: false
+          modifyOutputPath: false
+          workingDirectory: $(ProjPath)
+      - bash: |
+          set -e
+          if [[ -d "obj/Docker/publish" ]]; then
+            if [[ "$(skipChartsOutputTest)" != "true" ]]; then
+              if [[ -d "obj/Docker/publish/charts" ]]; then
+                echo "##vso[task.logissue type=error;]obj/Docker/publish should not contain 'charts' directory"
+                echo "##vso[task.complete result=Failed;]"
+              fi
+            fi
+          else
+            echo "##vso[task.logissue type=error;]No output at obj/Docker/publish"
+            echo "##vso[task.complete result=Failed;]"
+          fi
+        workingDirectory: $(ProjPath)
+        displayName: Test publish output
+      - template: steps-build-dockerfile.yml
+        parameters:
+          ProjPath: ${{ parameters.ProjPath }}
+          DockerImg: ${{ parameters.DockerImg }}
+          DockerImgTag: ${{ parameters.Version }}
