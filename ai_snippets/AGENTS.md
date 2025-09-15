@@ -34,3 +34,17 @@ Coordinate background agents to continuously expand the snippet library and meta
 - "agent: add <pattern> in <lang>"
 - "agent: validate metadata for <id>"
 - "agent: extend docs for voice usage"
+
+### API Endpoints
+- GET `/tasks?status=pending&type=snippet` → List tasks (filterable)
+- POST `/tasks/{id}/claim` { assignee } → Claim a task (sets in_progress)
+- PATCH `/tasks/{id}` { status, outputs, notes, assignee } → Update any fields
+
+### Quickstart
+- Start everything including API: `ai_snippets/scripts/start.sh`
+- Query tasks:
+  - `curl 'http://localhost:8000/tasks?status=pending'`
+- Claim a task:
+  - `curl -X POST 'http://localhost:8000/tasks/batch-2-bash/claim' -H 'Content-Type: application/json' -d '{"assignee":"agent-1"}'`
+- Update task:
+  - `curl -X PATCH 'http://localhost:8000/tasks/batch-2-bash' -H 'Content-Type: application/json' -d '{"status":"in_progress","notes":"working"}'`
